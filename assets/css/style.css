@@ -26,6 +26,7 @@ body, html {
 
 .welcome-img-container {
     height: 100vh;
+    min-height: 600px;
 
     background: url('/assets/images/img_001.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -37,7 +38,7 @@ body, html {
     align-items: center;
     justify-content: center;
 
-    position: relative;
+    position: absolute;
 }  
 
 .opaque-overlay-img {
@@ -64,4 +65,24 @@ body, html {
     color: #fafafa;
     font-weight: bold;
     font-size: 20px;
+    margin-bottom: 10%;
 }
+
+.jumbotron-buttons {
+    margin: 10px 0;
+}
+
+/* ----------------------------------------Media Queries */
+
+ @media screen and (max-width: 760px) {
+    h1.jumbotron-header {
+        font-size: 40px;
+    }
+  }
+
+   @media screen and (max-width: 760px) {
+    p.jumbotron-paragraph {
+        font-size: 15px;
+        margin: 8%;
+    }
+  }
