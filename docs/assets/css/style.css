@@ -12,8 +12,21 @@ body, html {
 
 .titles-style {
     text-align: center;
+    text-transform: uppercase;
     font-size: 40px;
     padding: 15px;
+}
+
+.title-container {
+    padding-top: 15px;
+    color: #6c757d;
+}
+
+.block-title-divider {
+    width: 90%;
+    height: 3px;
+    border: 0;
+    background-color: #094986;
 }
 
 /*--------------------------------------------Navbar*/
@@ -86,8 +99,8 @@ body, html {
 .container-wrapper {}
 
 .about-us-container {
-    background-color: #30a2c1;
-    color: #fafafa;
+    background-color: #e4f1f5;
+    color: #05124e;
     min-height: 150px;
     padding: 30px 20px;
 }
@@ -108,14 +121,28 @@ body, html {
 }
 
 .about-us-block-divider {
-    width: 70%;
+    width: 75%;
     height: 3px;
     border: 0;
-    background-color: #094986;
+    background-color: #ca5a12;
 }
 
 /*--------------------------------------------End Home Page*/
 
+/*--------------------------------------------Analytics Page*/
+
+
+
+/* ----------------------------------------Footer */
+ footer {
+     color: #fafafa;
+     min-height: 50px;
+ }
+
+ footer p {
+    text-align: center;
+    padding-top: 10px;
+ }
 /* ----------------------------------------Media Queries */
 
  @media screen and (max-width: 760px) {
