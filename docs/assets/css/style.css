@@ -4,7 +4,7 @@ body, html {
 }
 
 
-/*--------------------------------------------Other useful classes*/
+/*--------------------------------------------Other useful classes (uses for several elements)*/
 
 .background-color-navbar-footer {
     background-color:#062f58;
@@ -22,11 +22,23 @@ body, html {
     color: #6c757d;
 }
 
+.sub-title-container {
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
 .block-title-divider {
     width: 90%;
     height: 3px;
     border: 0;
     background-color: #094986;
+    margin-bottom: 50px;
+}
+
+.block-container-divider {
+    height: 3px;
+    background-color: #c8ccd2;
 }
 
 /*--------------------------------------------Navbar*/
@@ -131,6 +143,10 @@ body, html {
 
 /*--------------------------------------------Analytics Page*/
 
+.sub-title-color {
+    background-color: #a8b9bd;
+    height: 80px;
+}
 
 
 /* ----------------------------------------Footer */
@@ -143,17 +159,27 @@ body, html {
     text-align: center;
     padding-top: 10px;
  }
+
 /* ----------------------------------------Media Queries */
 
  @media screen and (max-width: 760px) {
     h1.jumbotron-header {
-        font-size: 40px;
+        font-size: 50px;
     }
   }
 
-   @media screen and (max-width: 760px) {
+ @media screen and (max-width: 760px) {
     p.jumbotron-paragraph {
-        font-size: 15px;
+        font-size: 20px;
         margin: 8%;
     }
   }
+
+/* ----------------------------------------Datepicker */
+
+.datepicker-container {
+    text-align: center;
+    font-weight: bold;
+    min-height: 60px;
+    padding-top: 15px;
+}
