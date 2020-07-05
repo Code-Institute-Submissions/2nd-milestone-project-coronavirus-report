@@ -32,41 +32,53 @@ $( function() {
     }
   } );
 
-// Charts Library from echarts.apache.org
+// Charts Library from https://echarts.apache.org/
 
 // COVID-19 world cases chart
 
-  // based on prepared DOM, initialize echarts instance
-  var myChart = echarts.init(document.getElementById('total-world-cases-chart'));
+  var chartWorldCases = echarts.init(document.getElementById('total-world-cases-chart'));
 
-  // specify chart configuration item and data
-  var option = {
-      title: {
-          text: 'COVID-19 World Cases'
+  var optionWorldCases = {
+      baseOption: {
+        title: {
+            text: 'COVID-19 World Cases'
+        },
+        tooltip: {},
+        legend: {
+            data:['Cases by day']
+        },
+        xAxis: {
+            data: ["05/07/2020","06/07/2020","07/07/2020","08/07/2020","09/07/2020","10/07/2020"]
+        },
+        yAxis: {},
+        grid: {
+          left: "15%",
+          height: "auto",
+          width: "auto"
+        },
+        series: [{
+            name: 'COVID-19 Cases',
+            type: 'bar',
+            itemStyle: {
+              color: '#062f58'
+          },
+        emphasis: {
+            itemStyle: {
+              color: '#da530b',
+            }
+        },
+            data: [500, 560, 600, 555, 1200, 1256]
+        }],
       },
-      tooltip: {},
-      legend: {
-          data:['Cases by day']
-      },
-      xAxis: {
-          data: ["05/07/2020","06/07/2020","07/07/2020","08/07/2020","09/07/2020","10/07/2020"]
-      },
-      yAxis: {},
-      series: [{
-          name: 'COVID-19 Cases',
-          type: 'bar',
-          data: [500, 560, 600, 555, 1200, 1256]
-      }]
   };
 
-  // use configuration item and data specified to show chart
-  myChart.setOption(option);
+  chartWorldCases.setOption(optionWorldCases);
 
 // COVID-19 world deaths chart
+ 
+   var chartDeaths = echarts.init(document.getElementById('total-world-deaths-chart'));
 
-   var myChart = echarts.init(document.getElementById('total-world-deaths-chart'));
-
-   var option = {
+   var optionDeaths = {
        title: {
            text: 'COVID-19 World Deaths'
        },
@@ -78,20 +90,33 @@ $( function() {
            data: ["05/07/2020","06/07/2020","07/07/2020","08/07/2020","09/07/2020","10/07/2020"]
        },
        yAxis: {},
+       grid: {
+        left: "15%",
+        height: "auto",
+        width: "auto"
+      },
        series: [{
            name: 'COVID-19 Deaths',
            type: 'bar',
+           itemStyle: {
+            color: '#062f58'
+        },
+        emphasis: {
+          itemStyle: {
+            color: '#da530b',
+          }
+        },
            data: [500, 560, 600, 555, 1200, 1256]
        }]
    };
  
-   myChart.setOption(option);
+   chartDeaths.setOption(optionDeaths);
 
 // COVID-19 world recovered chart
 
-  var myChart = echarts.init(document.getElementById('total-world-recovered-chart'));
+  var chartRecovered = echarts.init(document.getElementById('total-world-recovered-chart'));
 
-  var option = {
+  var optionRecovered = {
       title: {
           text: 'COVID-19 World Recovered'
       },
@@ -103,11 +128,24 @@ $( function() {
           data: ["05/07/2020","06/07/2020","07/07/2020","08/07/2020","09/07/2020","10/07/2020"]
       },
       yAxis: {},
+      grid: {
+        left: "15%",
+        height: "auto",
+        width: "auto"
+      },
       series: [{
           name: 'COVID-19 Recovered',
           type: 'bar',
+          itemStyle: {
+            color: '#062f58'
+        },
+        emphasis: {
+            itemStyle: {
+              color: '#da530b',
+            }
+        },
           data: [500, 560, 600, 555, 1200, 1256]
       }]
   };
 
-  myChart.setOption(option);
+  chartRecovered.setOption(optionRecovered);
