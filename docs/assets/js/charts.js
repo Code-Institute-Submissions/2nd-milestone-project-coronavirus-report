@@ -1,5 +1,11 @@
 // Datepicker with select a date range, resource from jQuery UI version 1.12
 
+let filteredWorldData;
+let dateArray;
+let totalCasesArray;
+
+// Globally Report Datepicker
+
 $( function() {
     var dateFormat = "mm/dd/yy",
       from = $( "#from" )
@@ -10,8 +16,51 @@ $( function() {
         })
         .on( "change", function() {
           to.datepicker( "option", "minDate", getDate( this ) );
+          filteredWorldData = filterJSONbyDate(total_world_report, getDate( this ), $("#to").datepicker("getDate"));
+          dateArray = getArrayFromJSONbyKey(filteredWorldData, "last_update", true);
+          totalCasesArray = getArrayFromJSONbyKey(filteredWorldData, "total_cases")
+          chartWorldCases.setOption(optionWorldCases(dateArray.reverse(), totalCasesArray.reverse()));
         }),
       to = $( "#to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+        filteredWorldData = filterJSONbyDate(total_world_report, $("#from").datepicker("getDate"), getDate( this ));
+        dateArray = getArrayFromJSONbyKey(filteredWorldData, "last_update", true);
+        totalCasesArray = getArrayFromJSONbyKey(filteredWorldData, "total_cases");
+        document.getElementById("total-world-cases").innerHTML = numberWithCommas(totalCasesArray[0]);
+        chartWorldCases.setOption(optionWorldCases(dateArray.reverse(), totalCasesArray.reverse()));        
+      });
+ 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+ 
+      return date;
+    }
+  } );
+
+  // Report by Country Datepicker
+
+  $( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#from1" )
+        .datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 1
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#to1" ).datepicker({
         defaultDate: "+1w",
         changeMonth: true,
         numberOfMonths: 1
@@ -38,7 +87,8 @@ $( function() {
 
   var chartWorldCases = echarts.init(document.getElementById('total-world-cases-chart'));
 
-  var optionWorldCases = {
+  function optionWorldCases(dates, cases){
+      return {
       baseOption: {
         title: {
             text: 'COVID-19 World Cases'
@@ -48,11 +98,12 @@ $( function() {
             data:['Cases by day']
         },
         xAxis: {
-            data: ["05/07/2020","06/07/2020","07/07/2020","08/07/2020","09/07/2020","10/07/2020"]
+            data: dates
+
         },
         yAxis: {},
         grid: {
-          left: "15%",
+          left: "19.5%",
           height: "auto",
           width: "auto"
         },
@@ -67,12 +118,11 @@ $( function() {
               color: '#da530b',
             }
         },
-            data: [500, 560, 600, 555, 1200, 1256]
+            data: cases
         }],
       },
   };
-
-  chartWorldCases.setOption(optionWorldCases);
+}
 
 // COVID-19 world deaths chart
  
@@ -91,7 +141,7 @@ $( function() {
        },
        yAxis: {},
        grid: {
-        left: "15%",
+        left: "19.5%",
         height: "auto",
         width: "auto"
       },
@@ -129,7 +179,7 @@ $( function() {
       },
       yAxis: {},
       grid: {
-        left: "15%",
+        left: "19.5%",
         height: "auto",
         width: "auto"
       },
@@ -149,3 +199,123 @@ $( function() {
   };
 
   chartRecovered.setOption(optionRecovered);
+
+// COVID-19 Country Cases chart
+
+var chartCountryCases = echarts.init(document.getElementById('total-cases-country-chart'));
+
+var optionCountryCases = {
+    title: {
+      text: 'Country Cases'
+    },
+    tooltip: {
+      trigger: 'axis'
+    },
+    legend: {
+      data: ['Current Cases', 'Projected Cases']
+    },
+    grid: {
+      left: "19.5%",
+      height: "auto",
+      width: "auto"
+    },
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      data: ["05/07/2020","06/07/2020","07/07/2020","08/07/2020","09/07/2020","10/07/2020"]
+    },
+    yAxis: {
+      type: 'value'
+    },
+    series: [
+      {
+        name: 'Current Cases',
+        type: 'line',
+        data: [500, 560, 600, 555, 1200, 1256]
+      },
+      {
+        name: 'Projected Cases',
+        type: 'line',
+        data: [1256, 2200, 3500, 5000, 6000]
+      },
+    ]
+};
+
+chartCountryCases.setOption(optionCountryCases);
+
+
+// COVID-19 Country deaths chart
+ 
+var chartCountryDeaths = echarts.init(document.getElementById('total-country-deaths-chart'));
+
+var optionCountryDeaths = {
+      title: {
+          text: 'Country Deaths'
+      },
+      tooltip: {},
+      legend: {
+          data:['Deaths by day']
+      },
+      xAxis: {
+          data: ["05/07/2020","06/07/2020","07/07/2020","08/07/2020","09/07/2020","10/07/2020"]
+      },
+      yAxis: {},
+      grid: {
+        left: "19.5%",
+        height: "auto",
+        width: "auto"
+      },
+      series: [{
+          name: 'COVID-19 Country Deaths',
+          type: 'bar',
+          itemStyle: {
+            color: '#062f58'
+        },
+        emphasis: {
+            itemStyle: {
+              color: '#da530b',
+            }
+        },
+          data: [500, 560, 600, 555, 1200, 1256]
+      }]
+};
+
+chartCountryDeaths.setOption(optionCountryDeaths);
+
+// COVID-19 Country Recovered chart
+ 
+var chartCountryRecovered = echarts.init(document.getElementById('total-country-recovered-chart'));
+
+var optionCountryRecovered = {
+      title: {
+          text: 'Country Recovered'
+      },
+      tooltip: {},
+      legend: {
+          data:['Recovered by day']
+      },
+      xAxis: {
+          data: ["05/07/2020","06/07/2020","07/07/2020","08/07/2020","09/07/2020","10/07/2020"]
+      },
+      yAxis: {},
+      grid: {
+        left: "19.5%",
+        height: "auto",
+        width: "auto"
+      },
+      series: [{
+          name: 'Country Recovered',
+          type: 'bar',
+          itemStyle: {
+            color: '#062f58'
+        },
+        emphasis: {
+            itemStyle: {
+              color: '#da530b',
+            }
+        },
+          data: [500, 560, 600, 555, 1200, 1256]
+      }]
+};
+
+chartCountryRecovered.setOption(optionCountryRecovered);

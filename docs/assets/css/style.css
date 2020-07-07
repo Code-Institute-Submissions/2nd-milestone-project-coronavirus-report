@@ -165,6 +165,13 @@ body, html {
     font-weight: bold;
 }
 
+.margin-container {
+    margin-bottom: 30px;
+}
+
+input {
+    margin-bottom: 10px;
+}
 /* ----------------------------------------Datepicker */
 
 .datepicker-container {
@@ -176,17 +183,12 @@ body, html {
 
 /* ----------------------------------------Charts */
 
-#total-world-cases-chart {
-    width:600px;
-    height:400px;
-}
-
-#total-world-deaths-chart{
-    width:600px;
-    height:400px;
-}
-
-#total-world-recovered-chart{
+#total-world-cases-chart, 
+#total-world-deaths-chart,
+#total-world-recovered-chart,
+#total-cases-country-chart,
+#total-country-deaths-chart,
+#total-country-recovered-chart{
     width:600px;
     height:400px;
 }
@@ -217,13 +219,24 @@ footer p {
     }
   }
 
-  @media screen and (max-width: 3760px) {
-    #total-world-cases-chart {
+ @media screen and (max-width: 3760px) {
+    #total-world-cases-chart, 
+    #total-world-deaths-chart,
+    #total-world-recovered-chart,
+    #total-cases-country-chart,
+    #total-country-deaths-chart,
+    #total-country-recovered-chart {
         margin-left: 8%;
-  }
-
+    }
+ }
+    
   @media screen and (max-width: 750px) {
-    #total-world-cases-chart {
+    #total-world-cases-chart,
+    #total-world-deaths-chart,
+    #total-world-recovered-chart,
+    #total-cases-country-chart,
+    #total-country-deaths-chart,
+    #total-country-recovered-chart {
         width: 500px;
         height: 350px;
         margin-left: 0;
@@ -231,7 +244,12 @@ footer p {
   }
 
   @media screen and (max-width: 480px) {
-    #total-world-cases-chart {
+    #total-world-cases-chart,
+    #total-world-deaths-chart,
+    #total-world-recovered-chart,
+    #total-cases-country-chart,
+    #total-country-deaths-chart,
+    #total-country-recovered-chart {
         width: 380px;
         height: 300px;
         margin-left: 0;
@@ -239,65 +257,12 @@ footer p {
   }
 
   @media screen and (max-width: 400px) {
-    #total-world-cases-chart {
-        width: 350px;
-        height: 250px;
-        margin-left: 0;
-    }
-  }
-
-  @media screen and (max-width: 3760px) {
-    #total-world-deaths-chart {
-        margin-left: 8%;
-  }
-
-  @media screen and (max-width: 750px) {
-    #total-world-deaths-chart {
-        width: 500px;
-        height: 350px;
-        margin-left: 0;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    #total-world-deaths-chart {
-        width: 380px;
-        height: 300px;
-        margin-left: 0;
-    }
-  }
-
-  @media screen and (max-width: 400px) {
-    #total-world-deaths-chart {
-        width: 350px;
-        height: 250px;
-        margin-left: 0;
-    }
-  }
-
-  @media screen and (max-width: 3760px) {
-    #total-world-recovered-chart {
-        margin-left: 8%;
-  }
-
-  @media screen and (max-width: 750px) {
-    #total-world-recovered-chart {
-        width: 500px;
-        height: 350px;
-        margin-left: 0;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    #total-world-recovered-chart {
-        width: 380px;
-        height: 300px;
-        margin-left: 0;
-    }
-  }
-
-  @media screen and (max-width: 400px) {
-    #total-world-recovered-chart {
+    #total-world-cases-chart,
+    #total-world-deaths-chart,
+    #total-world-recovered-chart,
+    #total-cases-country-chart,
+    #total-country-deaths-chart,
+    #total-country-recovered-chart {
         width: 350px;
         height: 250px;
         margin-left: 0;
