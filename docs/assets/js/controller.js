@@ -1,7 +1,11 @@
 let total_world_report;
 
 $( document ).ready(function() {
-    
+    $("#country").countrySelect({
+        defaultCountry: "ie",
+        preferredCountries: ['ie', 'gb', 'us','ru'],
+        responsiveDropdown: true
+    });
     response = $.get("https://covid19-api.org/api/timeline", function(data, status){
          total_world_report = data;
          return data;
