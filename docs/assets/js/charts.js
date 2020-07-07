@@ -1,10 +1,12 @@
 // Datepicker with select a date range, resource from jQuery UI version 1.12
 
+// Globally Report Datepicker
+
 let filteredWorldData;
 let dateArray;
 let totalCasesArray;
-
-// Globally Report Datepicker
+let totalDeathsArray;
+let totalRecoveredArray;
 
 $( function() {
     var dateFormat = "mm/dd/yy",
@@ -19,7 +21,11 @@ $( function() {
           filteredWorldData = filterJSONbyDate(total_world_report, getDate( this ), $("#to").datepicker("getDate"));
           dateArray = getArrayFromJSONbyKey(filteredWorldData, "last_update", true);
           totalCasesArray = getArrayFromJSONbyKey(filteredWorldData, "total_cases")
+          totalDeathsArray = getArrayFromJSONbyKey(filteredWorldData, "total_deaths");
+          totalRecoveredArray = getArrayFromJSONbyKey(filteredWorldData, "total_recovered");
           chartWorldCases.setOption(optionWorldCases(dateArray.reverse(), totalCasesArray.reverse()));
+          chartDeaths.setOption(optionDeaths(dateArray.reverse(), totalDeathsArray.reverse())); 
+          chartRecovered.setOption(optionRecovered(dateArray.reverse(), totalRecoveredArray.reverse()));
         }),
       to = $( "#to" ).datepicker({
         defaultDate: "+1w",
@@ -31,8 +37,14 @@ $( function() {
         filteredWorldData = filterJSONbyDate(total_world_report, $("#from").datepicker("getDate"), getDate( this ));
         dateArray = getArrayFromJSONbyKey(filteredWorldData, "last_update", true);
         totalCasesArray = getArrayFromJSONbyKey(filteredWorldData, "total_cases");
+        totalDeathsArray = getArrayFromJSONbyKey(filteredWorldData, "total_deaths");
+        totalRecoveredArray = getArrayFromJSONbyKey(filteredWorldData, "total_recovered");
         document.getElementById("total-world-cases").innerHTML = numberWithCommas(totalCasesArray[0]);
-        chartWorldCases.setOption(optionWorldCases(dateArray.reverse(), totalCasesArray.reverse()));        
+        chartWorldCases.setOption(optionWorldCases(dateArray.reverse(), totalCasesArray.reverse())); 
+        document.getElementById("total-world-deaths").innerHTML = numberWithCommas(totalDeathsArray[0]);
+        chartDeaths.setOption(optionDeaths(dateArray.reverse(), totalDeathsArray.reverse())); 
+        document.getElementById("total-world-recovered").innerHTML = numberWithCommas(totalRecoveredArray[0]); 
+        chartRecovered.setOption(optionRecovered(dateArray.reverse(), totalRecoveredArray.reverse()));     
       });
  
     function getDate( element ) {
@@ -128,7 +140,8 @@ $( function() {
  
    var chartDeaths = echarts.init(document.getElementById('total-world-deaths-chart'));
 
-   var optionDeaths = {
+   function optionDeaths (dates, deaths) {
+     return {
        title: {
            text: 'COVID-19 World Deaths'
        },
@@ -137,7 +150,7 @@ $( function() {
            data:['Deaths by day']
        },
        xAxis: {
-           data: ["05/07/2020","06/07/2020","07/07/2020","08/07/2020","09/07/2020","10/07/2020"]
+           data: dates
        },
        yAxis: {},
        grid: {
@@ -156,17 +169,18 @@ $( function() {
             color: '#da530b',
           }
         },
-           data: [500, 560, 600, 555, 1200, 1256]
+           data: deaths
        }]
+    }
    };
  
-   chartDeaths.setOption(optionDeaths);
 
 // COVID-19 world recovered chart
 
   var chartRecovered = echarts.init(document.getElementById('total-world-recovered-chart'));
 
-  var optionRecovered = {
+  function optionRecovered (dates, recovered) {
+    return {
       title: {
           text: 'COVID-19 World Recovered'
       },
@@ -175,7 +189,7 @@ $( function() {
           data:['Recovered by day']
       },
       xAxis: {
-          data: ["05/07/2020","06/07/2020","07/07/2020","08/07/2020","09/07/2020","10/07/2020"]
+          data: dates
       },
       yAxis: {},
       grid: {
@@ -194,11 +208,10 @@ $( function() {
               color: '#da530b',
             }
         },
-          data: [500, 560, 600, 555, 1200, 1256]
+          data: recovered
       }]
+    }
   };
-
-  chartRecovered.setOption(optionRecovered);
 
 // COVID-19 Country Cases chart
 
