@@ -2,18 +2,33 @@ let total_world_report;
 let data_by_country;
 
 $( document ).ready(function() {
+    // Country Dropdown from Country Select JS Library
     $("#country").countrySelect({
         defaultCountry: "ie",
         preferredCountries: ['ie', 'gb', 'us','ru'],
         responsiveDropdown: true
     });
+    
     response = $.get("https://covid19-api.org/api/timeline", function(data, status){
          total_world_report = data;
          return data;
+      }).done(function() {
+        $('#from').datepicker();
+        $('#from').datepicker('setDate', '-7');
+        $('#to').datepicker();
+        $('#to').datepicker('setDate', 'today');
+        filteredWorldData = filterJSONbyDate(total_world_report, $("#from").datepicker("getDate"), $("#to").datepicker("getDate"));
+        dateArray = getArrayFromJSONbyKey(filteredWorldData, "last_update", true);
+        totalCasesArray = getArrayFromJSONbyKey(filteredWorldData, "total_cases");
+        totalDeathsArray = getArrayFromJSONbyKey(filteredWorldData, "total_deaths");
+        totalRecoveredArray = getArrayFromJSONbyKey(filteredWorldData, "total_recovered");
+        document.getElementById("total-world-cases").innerHTML = numberWithCommas(totalCasesArray[0]);
+        chartWorldCases.setOption(optionWorldCases(dateArray.reverse(), totalCasesArray.reverse())); 
+        document.getElementById("total-world-deaths").innerHTML = numberWithCommas(totalDeathsArray[0]);
+        chartDeaths.setOption(optionDeaths(dateArray.reverse(), totalDeathsArray.reverse())); 
+        document.getElementById("total-world-recovered").innerHTML = numberWithCommas(totalRecoveredArray[0]); 
+        chartRecovered.setOption(optionRecovered(dateArray.reverse(), totalRecoveredArray.reverse()));
       });
-
-    //   console.log(response);
-    //   console.log(total_world_report);
 });
 
 function getCountryDatabyDate(){
@@ -25,6 +40,7 @@ function getCountryDatabyDate(){
     var params = { countryCode: country_code, startDate: from, endDate: to };
     var str = jQuery.param( params );
 
+    // console.log("http://api.coronatracker.com/v3/analytics/trend/country?" + str)
     response = $.get("http://api.coronatracker.com/v3/analytics/trend/country?" + str, function(data, status){
         data_by_country = data;
      });
