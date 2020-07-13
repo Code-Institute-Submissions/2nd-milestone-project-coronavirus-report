@@ -24,8 +24,8 @@ $( function() {
           totalDeathsArray = getArrayFromJSONbyKey(filteredWorldData, "total_deaths");
           totalRecoveredArray = getArrayFromJSONbyKey(filteredWorldData, "total_recovered");
           chartWorldCases.setOption(optionWorldCases(dateArray.reverse(), totalCasesArray.reverse()));
-          chartDeaths.setOption(optionDeaths(dateArray.reverse(), totalDeathsArray.reverse())); 
-          chartRecovered.setOption(optionRecovered(dateArray.reverse(), totalRecoveredArray.reverse()));
+          chartDeaths.setOption(optionDeaths(dateArray, totalDeathsArray.reverse())); 
+          chartRecovered.setOption(optionRecovered(dateArray, totalRecoveredArray.reverse()));
         }),
       to = $( "#to" ).datepicker({
         defaultDate: "+1w",
@@ -42,9 +42,9 @@ $( function() {
         document.getElementById("total-world-cases").innerHTML = numberWithCommas(totalCasesArray[0]);
         chartWorldCases.setOption(optionWorldCases(dateArray.reverse(), totalCasesArray.reverse())); 
         document.getElementById("total-world-deaths").innerHTML = numberWithCommas(totalDeathsArray[0]);
-        chartDeaths.setOption(optionDeaths(dateArray.reverse(), totalDeathsArray.reverse())); 
+        chartDeaths.setOption(optionDeaths(dateArray, totalDeathsArray.reverse())); 
         document.getElementById("total-world-recovered").innerHTML = numberWithCommas(totalRecoveredArray[0]); 
-        chartRecovered.setOption(optionRecovered(dateArray.reverse(), totalRecoveredArray.reverse()));     
+        chartRecovered.setOption(optionRecovered(dateArray, totalRecoveredArray.reverse()));     
       });
  
     function getDate( element ) {

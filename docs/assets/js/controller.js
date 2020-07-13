@@ -25,9 +25,9 @@ $( document ).ready(function() {
         document.getElementById("total-world-cases").innerHTML = numberWithCommas(totalCasesArray[0]);
         chartWorldCases.setOption(optionWorldCases(dateArray.reverse(), totalCasesArray.reverse())); 
         document.getElementById("total-world-deaths").innerHTML = numberWithCommas(totalDeathsArray[0]);
-        chartDeaths.setOption(optionDeaths(dateArray.reverse(), totalDeathsArray.reverse())); 
+        chartDeaths.setOption(optionDeaths(dateArray, totalDeathsArray.reverse())); 
         document.getElementById("total-world-recovered").innerHTML = numberWithCommas(totalRecoveredArray[0]); 
-        chartRecovered.setOption(optionRecovered(dateArray.reverse(), totalRecoveredArray.reverse()));
+        chartRecovered.setOption(optionRecovered(dateArray, totalRecoveredArray.reverse()));
       });
 });
 
