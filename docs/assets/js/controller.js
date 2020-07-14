@@ -55,7 +55,7 @@ function getCountryDatabyDate(){
     var params = { countryCode: country_code, startDate: from, endDate: to };
     var str = jQuery.param( params );
 
-    response = $.get("http://api.coronatracker.com/v3/analytics/trend/country?" + str, function(data, status){
+    response = $.get("https://api.coronatracker.com/v3/analytics/trend/country?" + str, function(data, status){
         // data_by_country = data;
      }).done(function(data) {
         typeof(data) == "string"? data = JSON.parse(data): console.log("No need to convert into JSON")
@@ -82,7 +82,6 @@ function filterJSONbyDate(data, startDate, endDate) {
 function getArrayFromJSONbyKey(data, key, splitdate) {
     console.log(typeof(data))
     let temArray = [];
-    console.log("Antes de filtrar")
     data.filter(function (a) {
         var selection = a[key] || {};
         // extract all date strings
