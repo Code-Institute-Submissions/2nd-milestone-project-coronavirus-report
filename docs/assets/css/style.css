@@ -235,36 +235,41 @@ body, html {
 }
 
 #covid-19-general-info h3,
-#about-coronaviruses-section h3 {
+#about-coronaviruses-section h3,
+#protect-from-coronavirus-section h3 {
     padding-top: 30px;
     text-align: center;
 }
 
 #covid-19-general-info h3 i,
-#about-coronaviruses-section h3 i {
+#about-coronaviruses-section h3 i,
+#protect-from-coronavirus-section h3 i {
     padding-right: 10px;
 }
 
-#covid-19-general-info ul li {
+#covid-19-general-info ul li,
+#protect-from-coronavirus-section ul li {
     padding-top: 10px;
     font-size: 20px;
     text-align: justify;
     padding-right: 15px;
 }
 
-#covid-19-general-info p {
+#covid-19-general-info p,
+#protect-from-coronavirus-section p {
     padding: 15px 10px;
     font-size: 18px;
     text-align: center;
 }
 
 #covid-19-general-info p a {
-    color: #0300b5;
+    color: #e00808;
 }
 
 #covid-19-general-info p a:hover {
     color: #fafafa;
     text-decoration: none;
+    text-shadow: rgba(0, 0, 0, 0.5);
 }
 
 /* About Coronaviruses Section */
@@ -293,6 +298,34 @@ body, html {
     
 }
 
+/* Protect yourself and other from coronavirus Section */
+
+#protect-from-coronavirus-section {
+    background-color: #1e9a87;
+    min-height: 150px;
+    color: #ffffff;
+    padding-bottom: 30px
+}
+
+.covid-img-protect-other {
+    padding: 30px 15px;
+    margin-top: 10%;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#protect-from-coronavirus-section p a {
+    color: #070071;
+}
+
+#protect-from-coronavirus-section p a:hover {
+    color: #a90000;
+    text-decoration: none;
+    text-shadow: rgba(0, 0, 0, 0.5);
+}
+ 
 /* ----------------------------------------Footer */
 footer {
     color: #fafafa;
@@ -381,6 +414,12 @@ footer p {
     }
   }
 
+  @media (min-width: 1280px)and (max-width: 1680px) {
+    .covid-img-protect-other {
+        margin-top: 35%;
+    }
+  }
+
   @media (min-width: 990px) and (max-width: 1270px) {
     .covid-img-general-info {
         margin-top: 50%;
@@ -390,5 +429,11 @@ footer p {
   @media (min-width: 990px) and (max-width: 1270px) {
     .covid-img-coronaviruses {
         margin-top: 30%;
+    }
+  }
+
+  @media (min-width: 990px) and (max-width: 1270px) {
+    .covid-img-protect-other {
+        margin-top: 50%;
     }
   }
