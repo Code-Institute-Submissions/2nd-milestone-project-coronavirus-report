@@ -211,6 +211,8 @@ body, html {
 
 /*--------------------------------------------COVID-19 Information Page*/
 
+/* What you need to know Section */
+
 .description-page {
     font-size: 23px;
     text-align: center;
@@ -223,7 +225,8 @@ body, html {
     background-color: #d2aef3;
     min-height: 150px;
     color: #340750;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 30px
 }
 
 .covid-img-general-info {
@@ -231,12 +234,14 @@ body, html {
     margin-top: 3%;
 }
 
-#covid-19-general-info h3 {
+#covid-19-general-info h3,
+#about-coronaviruses-section h3 {
     padding-top: 30px;
     text-align: center;
 }
 
-#covid-19-general-info h3 i {
+#covid-19-general-info h3 i,
+#about-coronaviruses-section h3 i {
     padding-right: 10px;
 }
 
@@ -260,6 +265,32 @@ body, html {
 #covid-19-general-info p a:hover {
     color: #fafafa;
     text-decoration: none;
+}
+
+/* About Coronaviruses Section */
+
+#about-coronaviruses-section {
+    background-color: #38849c;
+    min-height: 150px;
+    color: #fafafa;
+    margin-bottom: 20px;
+    padding-bottom: 30px
+}
+
+.covid-img-coronaviruses {
+    padding: 30px 15px;
+    margin-top: 3%;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#about-coronaviruses-section p {
+    padding: 10px 15px;
+    font-size: 20px;
+    text-align: justify;
+    
 }
 
 /* ----------------------------------------Footer */
@@ -339,13 +370,25 @@ footer p {
   }
 
   @media (min-width: 1280px)and (max-width: 1680px) {
-    .covid-img-general-info{
+    .covid-img-general-info {
         margin-top: 30%;
     }
   }
 
+  @media (min-width: 1280px)and (max-width: 1680px) {
+    .covid-img-coronaviruses {
+        margin-top: 15%;
+    }
+  }
+
   @media (min-width: 990px) and (max-width: 1270px) {
-    .covid-img-general-info{
+    .covid-img-general-info {
         margin-top: 50%;
+    }
+  }
+
+  @media (min-width: 990px) and (max-width: 1270px) {
+    .covid-img-coronaviruses {
+        margin-top: 30%;
     }
   }
