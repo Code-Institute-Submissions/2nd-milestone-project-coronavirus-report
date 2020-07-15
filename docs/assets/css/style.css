@@ -102,7 +102,7 @@ body, html {
 }
 
 .about-us-img {
-    width: 450px;
+    width: 500px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -176,7 +176,7 @@ body, html {
     width: 200px;
 }
 
-.countryDropDown{
+.countryDropDown {
     margin-top: 10px;
 }
 
@@ -184,7 +184,7 @@ body, html {
     width: 200px;
 }
 
-.countryCheckBock{
+.countryCheckBock {
     margin-top: 10px;
 }
 
@@ -204,21 +204,63 @@ body, html {
 #total-world-recovered-chart,
 #total-cases-country-chart,
 #total-country-deaths-chart,
-#total-country-recovered-chart{
+#total-country-recovered-chart {
     width:600px;
     height:400px;
 }
 
 /*--------------------------------------------COVID-19 Information Page*/
 
-.description-page{
-    font-size: 25px;
-    text-align: justify;
+.description-page {
+    font-size: 23px;
+    text-align: center;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 20px;
 }
 
+#covid-19-general-info{
+    background-color: #d2aef3;
+    min-height: 150px;
+    color: #340750;
+    padding-bottom: 20px;
+}
+
+.covid-img-general-info {
+    padding: 30px 15px;
+    margin-top: 3%;
+}
+
+#covid-19-general-info h3 {
+    padding-top: 30px;
+    text-align: center;
+}
+
+#covid-19-general-info h3 i {
+    padding-right: 10px;
+}
+
+#covid-19-general-info ul li {
+    padding-top: 10px;
+    font-size: 20px;
+    text-align: justify;
+    padding-right: 15px;
+}
+
+#covid-19-general-info p {
+    padding: 15px 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#covid-19-general-info p a {
+    color: #0300b5;
+}
+
+#covid-19-general-info p a:hover {
+    color: #fafafa;
+    text-decoration: none;
+}
 
 /* ----------------------------------------Footer */
 footer {
@@ -293,5 +335,17 @@ footer p {
         width: 350px;
         height: 250px;
         margin-left: 0;
+    }
+  }
+
+  @media (min-width: 1280px)and (max-width: 1680px) {
+    .covid-img-general-info{
+        margin-top: 30%;
+    }
+  }
+
+  @media (min-width: 990px) and (max-width: 1270px) {
+    .covid-img-general-info{
+        margin-top: 50%;
     }
   }
