@@ -363,7 +363,21 @@ body, html {
 }
 
 /* ----------------------------------------End Page */
+
+/* ----------------------------------------Contact Us page */
+
+#contact-form-container {
+    padding: 40px 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
  
+#contact-form-container form button {
+    text-transform: uppercase;
+}
+
+/* ----------------------------------------End */
+
 /* ----------------------------------------Footer */
 footer {
     color: #fafafa;
