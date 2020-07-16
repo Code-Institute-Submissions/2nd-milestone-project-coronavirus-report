@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.0.1/css/countrySelect.min.css" integrity="sha512-HHSUgqDtmyVfGT0pdLVRKcktf9PfLMfFzoiBjh9NPBzw94YFTS5DIwZ12Md/aDPcrkOstXBp9uSAOCl5W2/AOQ==" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+     (function(){
+         emailjs.init("user_bjArEAZgAYYGnZWISGLPD");
+     })();
+    </script>
     <title>Coronavirus Report | Contact Us</title>
 </head>
 <body>
@@ -62,25 +68,38 @@
     <section id="contact-form-container"  class="container shadow">
         <div class="row">
             <div class="col-12">
-                <form>
+                <form onsubmit="return sendMail(this);">
                     <label for="name">Name *</label>
                     <input type="text" name="name" id="name" class="form-control" required/>
                     <br>
                     <label for="email">Email *</label>
                     <input type="email" name="email" id="email" class="form-control" required/>
                     <br>
-                    <label for="subject">Subject *</label>
-                    <input type="text" name="subject" id="subject" class="form-control" required/>
-                    <br>
                     <label for="message">Message *</label>
                     <textarea rows="8" name="message" id="message" class="form-control" required></textarea>
                     <br>
                     <div class="form-row text-center">
                         <div class="col">
-                            <button type="submit" class="btn btn-info">Send Message</button>
+                            <button type="submit" value="Submit" class="btn btn-info" data-target="#messageSent">Send Message</button>
                         </div>
                     </div>
                 </form>
+
+                <!-- Bootstrap Modal -->
+
+                <div class="modal fade" id="messageSent" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <p class="message-sent-text"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-info" data-dismiss="modal" id="btn-close-modal">Close</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -99,6 +118,6 @@
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
+   <script src="assets/js/sendEmail.js"></script>
 </body>
 </html>

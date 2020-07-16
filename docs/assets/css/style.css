@@ -376,6 +376,11 @@ body, html {
     text-transform: uppercase;
 }
 
+.modal-body {
+    font-size: 20px;
+    text-align: center;
+}
+
 /* ----------------------------------------End */
 
 /* ----------------------------------------Footer */
@@ -410,7 +415,7 @@ footer p {
     }
   }
 
- @media screen and (max-width: 3760px) {
+  @media (min-width: 1200px) and (max-width: 3760px) {
     #total-world-cases-chart, 
     #total-world-deaths-chart,
     #total-world-recovered-chart,
