@@ -229,44 +229,39 @@ $( function() {
 
 var chartCountryCases = echarts.init(document.getElementById('total-cases-country-chart'));
 
-var optionCountryCases = {
-    title: {
-      text: 'Cases'
-    },
-    tooltip: {
-      trigger: 'axis'
-    },
-    legend: {
-      data: ['Current', 'Projected']
-    },
-    grid: {
-      left: "19.5%",
-      height: "auto",
-      width: "auto"
-    },
-    xAxis: {
-      type: 'category',
-      boundaryGap: false,
-      data: ["05/07/2020","06/07/2020","07/07/2020","08/07/2020","09/07/2020","10/07/2020"]
-    },
-    yAxis: {
-      type: 'value'
-    },
-    series: [
-      {
-        name: 'Current',
-        type: 'line',
-        data: [500, 560, 600, 555, 1200, 1256]
-      },
-      {
-        name: 'Projected',
-        type: 'line',
-        data: [1256, 2200, 3500, 5000, 6000]
-      },
-    ]
+function optionCountryCases (countryDates, countryCases){
+  return {
+     title: {
+         text: 'Cases'
+     },
+     tooltip: {},
+     legend: {
+         data:['Deaths by day']
+     },
+     xAxis: {
+         data: countryDates
+     },
+     yAxis: {},
+     grid: {
+       left: "19.5%",
+       height: "auto",
+       width: "auto"
+     },
+     series: [{
+         name: 'COVID-19 Country Cases',
+         type: 'bar',
+         itemStyle: {
+           color: '#062f58'
+       },
+       emphasis: {
+           itemStyle: {
+             color: '#da530b',
+           }
+       },
+         data: countryCases
+     }]
+   }
 };
-
-chartCountryCases.setOption(optionCountryCases);
 
 
 // COVID-19 Country deaths chart

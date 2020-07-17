@@ -62,8 +62,11 @@ function getCountryDatabyDate(){
         // console.log(typeof(data))
         // console.log(data)
         countryDateArray = getArrayFromJSONbyKey(data, "last_updated", true);
+        countryCasesArray = getArrayFromJSONbyKey(data, "total_confirmed");
         countryDeathsArray = getArrayFromJSONbyKey(data, "total_deaths");
         countryRecoveredArray = getArrayFromJSONbyKey(data, "total_recovered");
+        chartCountryCases.setOption(optionCountryCases (countryDateArray, countryCasesArray));
+        document.getElementById("total-country-cases").innerHTML = numberWithCommas(countryCasesArray.reverse()[0]);
         chartCountryDeaths.setOption(optionCountryDeaths (countryDateArray, countryDeathsArray));
         document.getElementById("total-country-deaths").innerHTML = numberWithCommas(countryDeathsArray.reverse()[0]);
         chartCountryRecovered.setOption(optionCountryRecovered(countryDateArray, countryRecoveredArray));
@@ -80,7 +83,7 @@ function filterJSONbyDate(data, startDate, endDate) {
 }
 
 function getArrayFromJSONbyKey(data, key, splitdate) {
-    console.log(typeof(data))
+    // console.log(typeof(data))
     let temArray = [];
     data.filter(function (a) {
         var selection = a[key] || {};
