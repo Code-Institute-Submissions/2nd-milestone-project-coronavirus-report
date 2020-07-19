@@ -107,6 +107,42 @@ $( function() {
     }
   } );
 
+  // Comparison by Country Datepicker
+
+  $( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#from2" )
+        .datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 1,
+          dateFormat: "yy-mm-dd"
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#to2" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        dateFormat: "yy-mm-dd"
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+
+      return date;
+    }
+  } );
+
 // Charts Library from https://echarts.apache.org/
 
 // COVID-19 world cases chart
@@ -346,3 +382,179 @@ function optionCountryRecovered (countryDates, countryrecovered){
       }]
   }   
 };
+
+// Comparison by country charts
+
+//COVID-19 comparison cases
+
+var chartComparisonCases = echarts.init(document.getElementById('comparison-by-country-cases-chart'));
+
+optionComparisonCases = {
+  title: {
+      text: 'Cases'
+  },
+  tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+          type: 'cross',
+          label: {
+              backgroundColor: '#6a7985'
+          }
+      }
+  },
+  legend: {
+      data: ['Cases by day']
+  },
+  grid: {
+      left: '14%',
+      right: '12%',
+      bottom: '3%',
+      containLabel: true
+  },
+  xAxis: [
+    {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2020/07/13','2020/07/14','2020/07/13','2020/07/15','2020/07/16']
+    }
+  ],
+  yAxis: [
+      {
+          type: 'value'
+      }
+  ],
+  series: [
+      {
+          name: 'Ireland',
+          type: 'line',
+          stack: 'total',
+          areaStyle: {},
+          data: [120, 132, 101, 134, 90]
+      },
+      {
+          name: 'USA',
+          type: 'line',
+          stack: 'total',
+          areaStyle: {},
+          data: [220, 182, 191, 234, 290]
+      }    
+  ]
+};
+
+chartComparisonCases.setOption(optionComparisonCases);
+
+//COVID-19 comparison deaths
+
+var chartComparisonDeaths = echarts.init(document.getElementById('comparison-by-country-deaths-chart'));
+
+optionComparisonDeaths = {
+  title: {
+      text: 'Deaths'
+  },
+  tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+          type: 'cross',
+          label: {
+              backgroundColor: '#6a7985'
+          }
+      }
+  },
+  legend: {
+      data: ['Deaths by day']
+  },
+  grid: {
+      left: '14%',
+      right: '12%',
+      bottom: '3%',
+      containLabel: true
+  },
+  xAxis: [
+    {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2020/07/13','2020/07/14','2020/07/13','2020/07/15','2020/07/16']
+    }
+  ],
+  yAxis: [
+      {
+          type: 'value'
+      }
+  ],
+  series: [
+      {
+          name: 'Ireland',
+          type: 'line',
+          stack: 'total',
+          areaStyle: {},
+          data: [120, 132, 101, 134, 90]
+      },
+      {
+          name: 'USA',
+          type: 'line',
+          stack: 'total',
+          areaStyle: {},
+          data: [220, 182, 191, 234, 290]
+      }    
+  ]
+};
+
+chartComparisonDeaths.setOption(optionComparisonDeaths);
+
+//COVID-19 comparison recovered
+
+var chartComparisonRecovered = echarts.init(document.getElementById('comparison-by-country-recovered-chart'));
+
+optionComparisonRecovered = {
+  title: {
+      text: 'Recovered'
+  },
+  tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+          type: 'cross',
+          label: {
+              backgroundColor: '#6a7985'
+          }
+      }
+  },
+  legend: {
+      data: ['Recovered by day']
+  },
+  grid: {
+      left: '14%',
+      right: '12%',
+      bottom: '3%',
+      containLabel: true
+  },
+  xAxis: [
+    {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2020/07/13','2020/07/14','2020/07/13','2020/07/15','2020/07/16']
+    }
+  ],
+  yAxis: [
+      {
+          type: 'value'
+      }
+  ],
+  series: [
+      {
+          name: 'Ireland',
+          type: 'line',
+          stack: 'total',
+          areaStyle: {},
+          data: [120, 132, 101, 134, 90]
+      },
+      {
+          name: 'USA',
+          type: 'line',
+          stack: 'total',
+          areaStyle: {},
+          data: [220, 182, 191, 234, 290]
+      }    
+  ]
+};
+
+chartComparisonRecovered.setOption(optionComparisonRecovered);

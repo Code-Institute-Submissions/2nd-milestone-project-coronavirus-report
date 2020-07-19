@@ -121,7 +121,7 @@
             </div>
         </div>
 
-        <!-- Country dropdown and datepickers  -->
+        <!-- Country dropdown, datepickers and Projected checkbox -->
 
         <div class="row datepicker-container">
             <div class="col-lg-3 col-xs-12 countryDropDown">
@@ -183,6 +183,82 @@
     </section>
 
         <!-- End Report by Country container -->
+
+        <!-- Comparison by Country container -->
+
+        <section id="comparison-by-country" class="container shadow margin-container">
+            <div class="row sub-title-color">
+                <div class="col-12">
+                    <h3 class="sub-title-container">Comparison by Country</h3>
+                </div>
+            </div>
+
+             <!-- Countries dropdown and datepicker  -->
+
+            <div class="row datepicker-container">
+                <div class="col-lg-3 col-xs-12 countryDropDown">
+                    <input type="text" id="country1" />
+                    <input type="hidden" id="country_code1" />
+                </div>
+                <div class="col-lg-3 col-xs-12 countryDropDown">
+                    <input type="text" id="country2" />
+                    <input type="hidden" id="country_code2" />
+                </div>
+                <div id="inputFrom" class="col-lg-3 col-xs-12">
+                    <input type="text" id="from2" name="from" placeholder="From">
+                </div>
+                <div id="inputTo" class="col-lg-3 col-xs-12">
+                    <input type="text" id="to2" name="to" placeholder="Until">
+                </div>
+                <div class="col-12">
+                    <hr class="block-container-divider">
+                </div>
+            </div>
+
+            <!-- End -->
+
+        <!-- Comparison by Country Cases Chart -->
+
+            <div class="row">
+                <div class="col-lg-4 col-xs-12 info-container">
+                    <h3 class="info-title">Countries:</h3>
+                    <h5 id="country1-cases" class="info-quantity">Ireland</h5>
+                    <h5 id="country2-cases" class="info-quantity">USA</h5>
+                </div>
+                <div class="col-lg-8 col-xs-12">
+                    <div id="comparison-by-country-cases-chart"></div>
+                </div>
+            </div>
+
+        <!-- Comparison by Country Deaths Chart -->
+
+            <div class="row">
+                <div class="col-lg-4 col-xs-12 info-container">
+                    <h3 class="info-title">Countries:</h3>
+                    <h5 id="country1-deaths" class="info-quantity">Ireland</h5>
+                    <h5 id="country2-deaths" class="info-quantity">USA</h5>
+                </div>
+                <div class="col-lg-8 col-xs-12">
+                    <div id="comparison-by-country-deaths-chart"></div>
+                </div>
+            </div>
+       
+
+        <!-- Comparison by Country Recovered Chart -->
+
+            <div class="row">
+                <div class="col-lg-4 col-xs-12 info-container">
+                    <h3 class="info-title">Countries:</h3>
+                    <h5 id="country1-recovered" class="info-quantity">Ireland</h5>
+                    <h5 id="country2-recovered" class="info-quantity">USA</h5>
+                </div>
+                <div class="col-lg-8 col-xs-12">
+                    <div id="comparison-by-country-recovered-chart"></div>
+                </div>
+            </div>
+    </section>
+
+        <!-- End Comparison by Country container -->
 
         <!-- Footer -->
     <footer class="container-fluid background-color-navbar-footer">

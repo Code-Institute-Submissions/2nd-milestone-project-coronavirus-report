@@ -4,9 +4,26 @@ let projected_cases_data;
 
 $( document ).ready(function() {
     // Country Dropdown from Country Select JS Library
+
+    // Country Dropdown for Report by Country
+
     $("#country").countrySelect({
         defaultCountry: "ie",
         preferredCountries: ['ie', 'gb', 'us','ru'],
+        responsiveDropdown: true
+    });
+
+    // Country Dropdown for Comparison by Country
+
+    $("#country1").countrySelect({
+        defaultCountry: "ie",
+        preferredCountries: ['ie','us','ru'],
+        responsiveDropdown: true
+    });
+
+    $("#country2").countrySelect({
+        defaultCountry: "us",
+        preferredCountries: ['ie','us','ru'],
         responsiveDropdown: true
     });
     

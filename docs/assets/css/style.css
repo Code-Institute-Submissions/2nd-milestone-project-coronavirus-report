@@ -165,7 +165,7 @@ body, html {
 
 .sub-title-color {
     background-color: #a8b9bd;
-    height: 80px;
+    min-height: 80px;
 }
 
 .title-container {
@@ -240,7 +240,10 @@ body, html {
 #total-world-recovered-chart,
 #total-cases-country-chart,
 #total-country-deaths-chart,
-#total-country-recovered-chart {
+#total-country-recovered-chart,
+#comparison-by-country-cases-chart,
+#comparison-by-country-deaths-chart,
+#comparison-by-country-recovered-chart {
     width:600px;
     height:400px;
 }
@@ -419,7 +422,10 @@ footer p {
     #total-world-recovered-chart,
     #total-cases-country-chart,
     #total-country-deaths-chart,
-    #total-country-recovered-chart {
+    #total-country-recovered-chart,
+    #comparison-by-country-cases-chart,
+    #comparison-by-country-deaths-chart,
+    #comparison-by-country-recovered-chart  {
         margin-left: 8%;
     }
  }
@@ -430,7 +436,10 @@ footer p {
     #total-world-recovered-chart,
     #total-cases-country-chart,
     #total-country-deaths-chart,
-    #total-country-recovered-chart {
+    #total-country-recovered-chart,
+    #comparison-by-country-cases-chart,
+    #comparison-by-country-deaths-chart,
+    #comparison-by-country-recovered-chart  {
         width: 500px;
         height: 350px;
         margin-left: 0;
@@ -443,7 +452,10 @@ footer p {
     #total-world-recovered-chart,
     #total-cases-country-chart,
     #total-country-deaths-chart,
-    #total-country-recovered-chart {
+    #total-country-recovered-chart,
+    #comparison-by-country-cases-chart,
+    #comparison-by-country-deaths-chart,
+    #comparison-by-country-recovered-chart  {
         width: 380px;
         height: 300px;
         margin-left: 0;
@@ -456,7 +468,10 @@ footer p {
     #total-world-recovered-chart,
     #total-cases-country-chart,
     #total-country-deaths-chart,
-    #total-country-recovered-chart {
+    #total-country-recovered-chart,
+    #comparison-by-country-cases-chart,
+    #comparison-by-country-deaths-chart,
+    #comparison-by-country-recovered-chart  {
         width: 350px;
         height: 250px;
         margin-left: 0;
