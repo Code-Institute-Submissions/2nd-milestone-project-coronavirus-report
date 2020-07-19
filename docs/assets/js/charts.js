@@ -9,6 +9,8 @@ let countryDateArray;
 let countryCasesArray;
 let countryDeathsArray;
 let countryRecoveredArray;
+let countryDateProjectedCases;
+let countryProjectedCases;
 
 // Datepicker with select a date range, resource from jQuery UI version 1.12
 
@@ -229,40 +231,44 @@ $( function() {
 
 var chartCountryCases = echarts.init(document.getElementById('total-cases-country-chart'));
 
-function optionCountryCases (countryDates, countryCases){
+function optionCountryCases (countryDates, countryCases, projectedDates, projectedCases){
   return {
-     title: {
-         text: 'Cases'
-     },
-     tooltip: {},
-     legend: {
-         data:['Deaths by day']
-     },
-     xAxis: {
-         data: countryDates
-     },
-     yAxis: {},
-     grid: {
-       left: "19.5%",
-       height: "auto",
-       width: "auto"
-     },
-     series: [{
-         name: 'COVID-19 Country Cases',
-         type: 'bar',
-         itemStyle: {
-           color: '#062f58'
-       },
-       emphasis: {
-           itemStyle: {
-             color: '#da530b',
-           }
-       },
-         data: countryCases
-     }]
-   }
+    title: {
+      text: 'Cases'
+    },
+    tooltip: {
+      trigger: 'axis'
+    },
+    legend: {
+      data: ['Current', 'Projected']
+    },
+    grid: {
+      left: "19.5%",
+      height: "auto",
+      width: "auto"
+    },
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      data: countryDates.concat(projectedDates)
+    },
+    yAxis: {
+      type: 'value'
+    },
+    series: [
+      {
+        name: 'Current',
+        type: 'line',
+        data: countryCases
+      },
+      {
+        name: 'Projected',
+        type: 'line',
+        data: projectedCases
+      },
+    ]
+  }
 };
-
 
 // COVID-19 Country deaths chart
  

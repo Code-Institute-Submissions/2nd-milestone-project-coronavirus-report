@@ -1,4 +1,5 @@
 let total_world_report;
+let projected_cases_data;
 // let data_by_country;
 
 $( document ).ready(function() {
@@ -73,6 +74,39 @@ function getCountryDatabyDate(){
         document.getElementById("total-country-recovered").innerHTML = numberWithCommas(countryRecoveredArray.reverse()[0]);
      });
 }
+
+document.getElementById("projected-cases").addEventListener("click", projectedCasesCheckBox);
+
+function getProjectedCases (){
+
+    country_code = $("#country_code").val();
+
+    response = $.get("https://covid19-api.org/api/prediction/" + country_code, function(data, status){
+        console.log(data);
+        projected_cases_data = data;
+     }).done(function() {
+        countryDateProjectedCases = getArrayFromJSONbyKey(projected_cases_data, "date");
+        countryProjectedCases = getArrayFromJSONbyKey(projected_cases_data, "cases");
+        let tempArray = []
+        for (let index = 0; index < countryCasesArray.length; index++) {
+            tempArray.push(null)            
+        }
+        let proyectedCases = tempArray.concat(countryProjectedCases);
+        // console.log(countryProjectedCases)
+        // console.log(proyectedCases)
+        chartCountryCases.setOption(optionCountryCases (countryDateArray, countryCasesArray.reverse(), countryDateProjectedCases, proyectedCases));
+     });
+}
+
+
+function projectedCasesCheckBox (){
+   if ( document.getElementById("projected-cases").checked ){
+    getProjectedCases();
+   } else{
+       getCountryDatabyDate();
+   }  
+}
+
 
 function filterJSONbyDate(data, startDate, endDate) {
     var filteredData = data.filter(a => {
