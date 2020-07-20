@@ -191,8 +191,41 @@ To clone this project from GitHub:
 5. Choose the location for the cloned directory.
 6. Type `git clone`, and then paste the clone URL.
 
->git clone https://github.com/USERNAME/REPOSITORY
+>`git clone https://github.com/USERNAME/REPOSITORY`
  
  7. Press 'Enter' to create your local clone.
 
-**Note**: Project in process.
+ ## Credits
+
+ ### Content
+
+ - The text for the COVID-19 Information page  was copied and modified from <a href="https://coronavirus.jhu.edu/" target="_blank">Johns Hopkins Coronavirus Resource Center</a>.
+
+### Media
+
+- The images used in this site were obtained from Google images and were improved using Adobe Photoshop.
+
+### Acknowledgements
+
+- I received inspiration for this project from the following websites:
+  - <a href="https://coronavirus.jhu.edu/" target="_blank">Johns Hopkins Coronavirus Resource Center</a>
+  - <a href="https://covid19.who.int/?gclid=CjwKCAjw57b3BRBlEiwA1ImytjUNXwWt4AN-gPPibZ89US3Jas3k_mCdBrhb_v1TpGbXjfobpcHyeRoCnFcQAvD_BwE" target="_blank">WHO Coronavirus Disease (COVID-19) Dashboard</a>
+  - <a href="https://www.worldometers.info/coronavirus/" target="_blank">WorldMeter</a>
+  - <a href="https://coronavirus.app/map" target="_blank">Coronavirus App</a>
+
+- These websites were really useful to troubleshooting the issues I faced:
+  - <a href="https://stackoverflow.com/" target="_blank">Stackoverflow</a>
+  - <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank">Bootstrap Documentation</a>
+  - <a href="https://www.w3schools.com/" target="_blank">w3schools</a>
+  - <a href="https://jquery.com/" target="_blank">jQuery Documentation</a>
+  - <a href="https://jqueryui.com/" target="_blank">jQuery UI</a>
+  - <a href="https://echarts.apache.org/en/option.html#title" target="_blank">Echart Documentation</a>
+
+- Thank you to the following people who helped with support, inspiration and guidance at different stages in the project:
+  - The guidance and support of my mentor Brian Macharia.
+  - My family and friends.
+  - My fellow workers.
+
+>**Disclaimer**
+  >>The content of this Website is for educational purposes only.
+>
