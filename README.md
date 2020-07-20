@@ -147,6 +147,9 @@ In the future I would like to implement in **Comparison by Country section** the
 - <a href= "https://www.emailjs.com/" target= "_blank">Email JS</a>
   - The project uses **Email JS** to implement a functional contact us page.
 
+- <a href="https://www.postman.com/" target="_blank">Postman</a>
+  - The project uses **Postman**  to test the APIs used to request information about the COVID-19.
+
 - <a href= "https://git-scm.com/" target= "_blank">Git</a>
   -  The project uses **Git** to control the different versions and history of the code.
 
@@ -159,5 +162,37 @@ In the future I would like to implement in **Comparison by Country section** the
 - <a href= "https://www.adobe.com/ie/" target= "_blank">Adobe Photoshop</a>
   - The project uses **Adobe Photoshop CS6** portable version 13.0.0, to improve the images used in the website.
 
+## Deployment
+
+This project was developed using **Gitpod** and **Visual Studio Code**. 
+
+### Deploying to GitHub Pages
+
+To deploy this page to GitHub Pages from its <a href= "https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report" target="_blank">GitHub repository</a>, the following steps were taken:
+
+1. Log into **GitHub**.
+2. Open the **'Settings'** section of the project repository in GitHub.
+3. Scroll down to the **GitHub Pages** section.
+4. Under Source click the drop-down menu labelled **None** and select **Master Branch** or **Marter Branch/docs folder**.
+5. On selecting **Master Branch** the page is automatically refreshed, the website is now deployed.
+6. On selecting **Master Branch/docs folder** , first you have to move your files into a docs folder, and then, the page is refreshed and the website is deployed.
+7. Scroll back down to the **GitHub Pages** section to retrieve the link to the deployed website.
+
+### Cloning the project
+
+To clone this project from GitHub:
+
+1. Follow this link to the <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report" target="_blank" >Project GitHub repository.</a>
+2. Scroll to the top of this repository and click on the "clone or download button".
+3. Decide whether you want to clone the project using HTTPS or an SSH key and do the following:
+    - HTTPS: click on the checklist icon to the right of the URL.
+    - SSH key: first click on 'Use SSH' then click on the same icon as above.
+4. Open the 'Terminal'.
+5. Choose the location for the cloned directory.
+6. Type `git clone`, and then paste the clone URL.
+
+>git clone https://github.com/USERNAME/REPOSITORY
+ 
+ 7. Press 'Enter' to create your local clone.
 
 **Note**: Project in process.
