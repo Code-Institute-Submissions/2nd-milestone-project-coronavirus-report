@@ -224,6 +224,18 @@ body, html {
     margin-top: 10px;
 }
 
+#country1-cases,
+#country1-deaths,
+#country1-recovered {
+    color: #c70c0c;
+}
+
+#country2-cases,
+#country2-deaths,
+#country2-recovered {
+    color: #112758;
+}
+
 /* ----------------------------------------Datepicker */
 
 .datepicker-container {

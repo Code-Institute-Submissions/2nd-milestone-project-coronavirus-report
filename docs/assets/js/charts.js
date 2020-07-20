@@ -11,6 +11,16 @@ let countryDeathsArray;
 let countryRecoveredArray;
 let countryDateProjectedCases;
 let countryProjectedCases;
+let dataFirstCountry;
+let dataSecondCountry;
+let firstCountryCasesArray;
+let firstCountryDeathsArray;
+let firstCountryRecoveredArray;
+let secondCountryCasesArray;
+let secondCountryDeathsArray;
+let secondCountryRecoveredArray;
+let firstCountryName;
+let secondCountryName;
 
 // Datepicker with select a date range, resource from jQuery UI version 1.12
 
@@ -119,6 +129,7 @@ $( function() {
           dateFormat: "yy-mm-dd"
         })
         .on( "change", function() {
+          renderComparisonByCountriesChart();
           to.datepicker( "option", "minDate", getDate( this ) );
         }),
       to = $( "#to2" ).datepicker({
@@ -128,6 +139,7 @@ $( function() {
         dateFormat: "yy-mm-dd"
       })
       .on( "change", function() {
+        renderComparisonByCountriesChart();
         from.datepicker( "option", "maxDate", getDate( this ) );
       });
 
@@ -389,8 +401,8 @@ function optionCountryRecovered (countryDates, countryrecovered){
 
 var chartComparisonCases = echarts.init(document.getElementById('comparison-by-country-cases-chart'));
 
-optionComparisonCases = {
-  title: {
+function optionComparisonCases (countriesDates, country1Cases, country2Cases, country1, country2) {
+ return {title: {
       text: 'Cases'
   },
   tooltip: {
@@ -406,8 +418,8 @@ optionComparisonCases = {
       data: ['Cases by day']
   },
   grid: {
-      left: '14%',
-      right: '12%',
+      left: '3%',
+      right: '16%',
       bottom: '3%',
       containLabel: true
   },
@@ -415,7 +427,7 @@ optionComparisonCases = {
     {
         type: 'category',
         boundaryGap: false,
-        data: ['2020/07/13','2020/07/14','2020/07/13','2020/07/15','2020/07/16']
+        data: countriesDates
     }
   ],
   yAxis: [
@@ -425,29 +437,29 @@ optionComparisonCases = {
   ],
   series: [
       {
-          name: 'Ireland',
+          name: country1,
           type: 'line',
           stack: 'total',
           areaStyle: {},
-          data: [120, 132, 101, 134, 90]
+          data: country1Cases
       },
       {
-          name: 'USA',
+          name: country2,
           type: 'line',
           stack: 'total',
           areaStyle: {},
-          data: [220, 182, 191, 234, 290]
+          data: country2Cases
       }    
   ]
+}
 };
-
-chartComparisonCases.setOption(optionComparisonCases);
 
 //COVID-19 comparison deaths
 
 var chartComparisonDeaths = echarts.init(document.getElementById('comparison-by-country-deaths-chart'));
 
-optionComparisonDeaths = {
+function optionComparisonDeaths (countriesDates, country1Deaths, country2Deaths, country1, country2) {
+  return {
   title: {
       text: 'Deaths'
   },
@@ -464,8 +476,8 @@ optionComparisonDeaths = {
       data: ['Deaths by day']
   },
   grid: {
-      left: '14%',
-      right: '12%',
+      left: '3%',
+      right: '16%',
       bottom: '3%',
       containLabel: true
   },
@@ -473,7 +485,7 @@ optionComparisonDeaths = {
     {
         type: 'category',
         boundaryGap: false,
-        data: ['2020/07/13','2020/07/14','2020/07/13','2020/07/15','2020/07/16']
+        data: countriesDates
     }
   ],
   yAxis: [
@@ -483,30 +495,31 @@ optionComparisonDeaths = {
   ],
   series: [
       {
-          name: 'Ireland',
+          name: country1,
           type: 'line',
           stack: 'total',
           areaStyle: {},
-          data: [120, 132, 101, 134, 90]
+          data: country1Deaths
       },
       {
-          name: 'USA',
+          name: country2,
           type: 'line',
           stack: 'total',
           areaStyle: {},
-          data: [220, 182, 191, 234, 290]
+          data: country2Deaths
       }    
   ]
+}
 };
 
-chartComparisonDeaths.setOption(optionComparisonDeaths);
 
 //COVID-19 comparison recovered
 
 var chartComparisonRecovered = echarts.init(document.getElementById('comparison-by-country-recovered-chart'));
 
-optionComparisonRecovered = {
-  title: {
+function optionComparisonRecovered (countriesDates, country1Recovered, country2Recovered, country1, country2) {
+  return {
+    title: {
       text: 'Recovered'
   },
   tooltip: {
@@ -522,8 +535,8 @@ optionComparisonRecovered = {
       data: ['Recovered by day']
   },
   grid: {
-      left: '14%',
-      right: '12%',
+      left: '3%',
+      right: '16%',
       bottom: '3%',
       containLabel: true
   },
@@ -531,7 +544,7 @@ optionComparisonRecovered = {
     {
         type: 'category',
         boundaryGap: false,
-        data: ['2020/07/13','2020/07/14','2020/07/13','2020/07/15','2020/07/16']
+        data: countriesDates
     }
   ],
   yAxis: [
@@ -541,20 +554,19 @@ optionComparisonRecovered = {
   ],
   series: [
       {
-          name: 'Ireland',
+          name: country1,
           type: 'line',
           stack: 'total',
           areaStyle: {},
-          data: [120, 132, 101, 134, 90]
+          data: country1Recovered
       },
       {
-          name: 'USA',
+          name: country2,
           type: 'line',
           stack: 'total',
           areaStyle: {},
-          data: [220, 182, 191, 234, 290]
+          data: country2Recovered
       }    
   ]
+}
 };
-
-chartComparisonRecovered.setOption(optionComparisonRecovered);

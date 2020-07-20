@@ -1,6 +1,5 @@
 let total_world_report;
 let projected_cases_data;
-// let data_by_country;
 
 $( document ).ready(function() {
     // Country Dropdown from Country Select JS Library
@@ -48,11 +47,20 @@ $( document ).ready(function() {
         chartRecovered.setOption(optionRecovered(dateArray, totalRecoveredArray.reverse()));
       });
 
+
+    // Report by country
     $('#from1').datepicker();
     $('#from1').datepicker('setDate', '-7');
     $('#to1').datepicker();
     $('#to1').datepicker('setDate', 'today');
     getCountryDatabyDate();
+
+    // Comparison by countries
+    $('#from2').datepicker();
+    $('#from2').datepicker('setDate', '-7');
+    $('#to2').datepicker();
+    $('#to2').datepicker('setDate', 'today');
+    renderComparisonByCountriesChart()
 
 });
 
@@ -74,11 +82,10 @@ function getCountryDatabyDate(){
     var str = jQuery.param( params );
 
     response = $.get("https://api.coronatracker.com/v3/analytics/trend/country?" + str, function(data, status){
-        // data_by_country = data;
+        
      }).done(function(data) {
         typeof(data) == "string"? data = JSON.parse(data): console.log("No need to convert into JSON")
-        // console.log(typeof(data))
-        // console.log(data)
+     
         countryDateArray = getArrayFromJSONbyKey(data, "last_updated", true);
         countryCasesArray = getArrayFromJSONbyKey(data, "total_confirmed");
         countryDeathsArray = getArrayFromJSONbyKey(data, "total_deaths");
@@ -89,6 +96,54 @@ function getCountryDatabyDate(){
         document.getElementById("total-country-deaths").innerHTML = numberWithCommas(countryDeathsArray.reverse()[0]);
         chartCountryRecovered.setOption(optionCountryRecovered(countryDateArray, countryRecoveredArray));
         document.getElementById("total-country-recovered").innerHTML = numberWithCommas(countryRecoveredArray.reverse()[0]);
+     });
+}
+
+function renderComparisonByCountriesChart(){
+
+    country_code1 = $("#country1_code").val();
+    country_code2 = $("#country2_code").val();
+    from = GetFormattedDate($("#from2").val());
+    to = GetFormattedDate($("#to2").val());
+
+    var params = { countryCode: country_code1, startDate: from, endDate: to };
+    var payloadFirstCountry = jQuery.param( params );
+    params = { countryCode: country_code2, startDate: from, endDate: to };
+    var payloadSecondCountry = jQuery.param( params );
+
+    response = $.get("https://api.coronatracker.com/v3/analytics/trend/country?" + payloadFirstCountry, function(data, status){
+        dataFirstCountry = data;
+     }).done(function(data) {
+        dataFirstCountry = data;
+        $.get("https://api.coronatracker.com/v3/analytics/trend/country?" + payloadSecondCountry, function(data) {
+            dataSecondCountry = data;
+        }).done(function(data) {
+            dataSecondCountry = data;
+            typeof(dataFirstCountry) == "string"? dataFirstCountry = JSON.parse(dataFirstCountry): console.log("No need to convert into JSON")
+            typeof(dataSecondCountry) == "string"? dataSecondCountry = JSON.parse(dataSecondCountry): console.log("No need to convert into JSON")
+            countryDateArray = getArrayFromJSONbyKey(dataFirstCountry, "last_updated", true);
+            // First country
+            firstCountryCasesArray = getArrayFromJSONbyKey(dataFirstCountry, "total_confirmed");
+            firstCountryDeathsArray = getArrayFromJSONbyKey(dataFirstCountry, "total_deaths");
+            firstCountryRecoveredArray = getArrayFromJSONbyKey(dataFirstCountry, "total_recovered");
+            firstCountryName = getArrayFromJSONbyKey(dataFirstCountry, "country");
+            document.getElementById("country1-cases").innerHTML = firstCountryName[0];
+            document.getElementById("country1-deaths").innerHTML = firstCountryName[0];
+            document.getElementById("country1-recovered").innerHTML = firstCountryName[0];
+            // Second Country
+            secondCountryCasesArray = getArrayFromJSONbyKey(dataSecondCountry, "total_confirmed");
+            secondCountryDeathsArray = getArrayFromJSONbyKey(dataSecondCountry, "total_deaths");
+            secondCountryRecoveredArray = getArrayFromJSONbyKey(dataSecondCountry, "total_recovered");
+            secondCountryName = getArrayFromJSONbyKey(dataSecondCountry, "country");
+            document.getElementById("country2-cases").innerHTML = secondCountryName[0];
+            document.getElementById("country2-deaths").innerHTML = secondCountryName[0];
+            document.getElementById("country2-recovered").innerHTML = secondCountryName[0];
+           
+            // Render charts
+            chartComparisonCases.setOption(optionComparisonCases (countryDateArray, firstCountryCasesArray, secondCountryCasesArray, firstCountryName[0], secondCountryName[0]));
+            chartComparisonDeaths.setOption(optionComparisonDeaths (countryDateArray, firstCountryDeathsArray, secondCountryDeathsArray, firstCountryName[0], secondCountryName[0]));
+            chartComparisonRecovered.setOption(optionComparisonRecovered (countryDateArray, firstCountryRecoveredArray, secondCountryRecoveredArray, firstCountryName[0], secondCountryName[0]));
+        })
      });
 }
 
@@ -108,10 +163,8 @@ function getProjectedCases (){
         for (let index = 0; index < countryCasesArray.length; index++) {
             tempArray.push(null)            
         }
-        let proyectedCases = tempArray.concat(countryProjectedCases);
-        // console.log(countryProjectedCases)
-        // console.log(proyectedCases)
-        chartCountryCases.setOption(optionCountryCases (countryDateArray, countryCasesArray.reverse(), countryDateProjectedCases, proyectedCases));
+        let projectedCases = tempArray.concat(countryProjectedCases);
+        chartCountryCases.setOption(optionCountryCases (countryDateArray, countryCasesArray.reverse(), countryDateProjectedCases, projectedCases));
      });
 }
 
@@ -134,7 +187,6 @@ function filterJSONbyDate(data, startDate, endDate) {
 }
 
 function getArrayFromJSONbyKey(data, key, splitdate) {
-    // console.log(typeof(data))
     let temArray = [];
     data.filter(function (a) {
         var selection = a[key] || {};
