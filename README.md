@@ -164,7 +164,7 @@ In the future I would like to implement in **Comparison by Country section** the
 
 ## Testing
 
-Please view the complete testing process in this separate document <a href="" target="_blank">here</a>.
+Please view the complete testing process in this separate document <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/docs/assets/documentation/TESTING.md" target="_blank">here</a>.
 
 ## Deployment
 

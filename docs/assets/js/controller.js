@@ -1,11 +1,12 @@
+// Global variables
 let total_world_report;
 let projected_cases_data;
 
+// Content in this function will be executed when the page is loaded
 $( document ).ready(function() {
     // Country Dropdown from Country Select JS Library
 
     // Country Dropdown for Report by Country
-
     $("#country").countrySelect({
         defaultCountry: "ie",
         preferredCountries: ['ie', 'gb', 'us','ru'],
@@ -13,7 +14,6 @@ $( document ).ready(function() {
     });
 
     // Country Dropdown for Comparison by Country
-
     $("#country1").countrySelect({
         defaultCountry: "ie",
         preferredCountries: ['ie','us','ru'],
@@ -25,7 +25,11 @@ $( document ).ready(function() {
         preferredCountries: ['ie','us','ru'],
         responsiveDropdown: true
     });
-    
+
+    // Call to request COVID-19 global data
+    // Data is stored in global var total_world_report 
+    // Charts are rendered 
+
     response = $.get("https://covid19-api.org/api/timeline", function(data, status){
          total_world_report = data;
          return data;
@@ -48,14 +52,14 @@ $( document ).ready(function() {
       });
 
 
-    // Report by country
+    // Report by country datepicker
     $('#from1').datepicker();
     $('#from1').datepicker('setDate', '-7');
     $('#to1').datepicker();
     $('#to1').datepicker('setDate', 'today');
     getCountryDatabyDate();
 
-    // Comparison by countries
+    // Comparison by countries datepicker
     $('#from2').datepicker();
     $('#from2').datepicker('setDate', '-7');
     $('#to2').datepicker();
@@ -64,6 +68,8 @@ $( document ).ready(function() {
 
 });
 
+// Parses a date object to return a format compatible with the API
+
 function GetFormattedDate(date) {
     var dateTime = new Date(date);
     var month = (dateTime.getMonth() + 1 < 10) ? '0' + (dateTime.getMonth() + 1) : dateTime.getMonth() + 1;
@@ -71,6 +77,10 @@ function GetFormattedDate(date) {
     var year = dateTime.getFullYear();
     return year + "-" + month + "-" + day;
 }
+
+// Read the code country and dates as a params to do the request
+// After finished the request, several arrays are created from data object.
+// These arrays are used to render the charts.
 
 function getCountryDatabyDate(){
 
@@ -98,6 +108,11 @@ function getCountryDatabyDate(){
         document.getElementById("total-country-recovered").innerHTML = numberWithCommas(countryRecoveredArray.reverse()[0]);
      });
 }
+
+// Read both code countries and dates as a params to do the request
+// After finished the request, a second one is made to retrieve data from the second country.
+// Several arrays are created using data objects from the API calls.
+// These arrays are used to render the charts.
 
 function renderComparisonByCountriesChart(){
 
@@ -149,12 +164,17 @@ function renderComparisonByCountriesChart(){
 
 document.getElementById("projected-cases").addEventListener("click", projectedCasesCheckBox);
 
+// After click is received, country code is read as payload for prediction API 
+// after the request is finished, we create 2 arrays to store the dates and cases.
+// Since the chart already has data on it and overlapping on the x axis 
+// we fill the occupied spaces in the x axis with a null value
+// After that we concat the projected cases in the x axis
+// And finally we render the chart using 2 arrays.
 function getProjectedCases (){
 
     country_code = $("#country_code").val();
 
     response = $.get("https://covid19-api.org/api/prediction/" + country_code, function(data, status){
-        console.log(data);
         projected_cases_data = data;
      }).done(function() {
         countryDateProjectedCases = getArrayFromJSONbyKey(projected_cases_data, "date");
@@ -168,7 +188,7 @@ function getProjectedCases (){
      });
 }
 
-
+// Depending on the state of the checkbox we render projected cases or not
 function projectedCasesCheckBox (){
    if ( document.getElementById("projected-cases").checked ){
     getProjectedCases();
@@ -177,7 +197,7 @@ function projectedCasesCheckBox (){
    }  
 }
 
-
+// We get a new object with the date range requested
 function filterJSONbyDate(data, startDate, endDate) {
     var filteredData = data.filter(a => {
       var date = new Date(a.last_update);
@@ -186,6 +206,7 @@ function filterJSONbyDate(data, startDate, endDate) {
     return filteredData;
 }
 
+// We created a new array from the specify key of the object
 function getArrayFromJSONbyKey(data, key, splitdate) {
     let temArray = [];
     data.filter(function (a) {
@@ -198,6 +219,7 @@ function getArrayFromJSONbyKey(data, key, splitdate) {
 }
 
 // function from StackOverflow
+// Add commas to the numbers
 
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

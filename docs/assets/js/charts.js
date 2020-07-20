@@ -1,16 +1,19 @@
 // Global variables
 
+// Global variables used in Globally Report Section 
 let filteredWorldData;
 let dateArray;
 let totalCasesArray;
 let totalDeathsArray;
 let totalRecoveredArray;
+// Global variables used in Report by Country Section
 let countryDateArray;
 let countryCasesArray;
 let countryDeathsArray;
 let countryRecoveredArray;
 let countryDateProjectedCases;
 let countryProjectedCases;
+// Global variables used in Comparison by Country Section
 let dataFirstCountry;
 let dataSecondCountry;
 let firstCountryCasesArray;
@@ -24,7 +27,7 @@ let secondCountryName;
 
 // Datepicker with select a date range, resource from jQuery UI version 1.12
 
-// Globally Report Datepicker
+// Globally Report Datepicker ////////////////////////////////////////////////////////////////////////////////
 
 $( function() {
     var dateFormat = "dd/mm/yy",
@@ -36,11 +39,13 @@ $( function() {
         })
         .on( "change", function() {
           to.datepicker( "option", "minDate", getDate( this ) );
+          // Global variables defined
           filteredWorldData = filterJSONbyDate(total_world_report, getDate( this ), $("#to").datepicker("getDate"));
           dateArray = getArrayFromJSONbyKey(filteredWorldData, "last_update", true);
           totalCasesArray = getArrayFromJSONbyKey(filteredWorldData, "total_cases")
           totalDeathsArray = getArrayFromJSONbyKey(filteredWorldData, "total_deaths");
           totalRecoveredArray = getArrayFromJSONbyKey(filteredWorldData, "total_recovered");
+          // Render charts
           chartWorldCases.setOption(optionWorldCases(dateArray.reverse(), totalCasesArray.reverse()));
           chartDeaths.setOption(optionDeaths(dateArray, totalDeathsArray.reverse())); 
           chartRecovered.setOption(optionRecovered(dateArray, totalRecoveredArray.reverse()));
@@ -52,16 +57,18 @@ $( function() {
       })
       .on( "change", function() {
         from.datepicker( "option", "maxDate", getDate( this ) );
+        // Global variables defined
         filteredWorldData = filterJSONbyDate(total_world_report, $("#from").datepicker("getDate"), getDate( this ));
         dateArray = getArrayFromJSONbyKey(filteredWorldData, "last_update", true);
         totalCasesArray = getArrayFromJSONbyKey(filteredWorldData, "total_cases");
         totalDeathsArray = getArrayFromJSONbyKey(filteredWorldData, "total_deaths");
         totalRecoveredArray = getArrayFromJSONbyKey(filteredWorldData, "total_recovered");
-        document.getElementById("total-world-cases").innerHTML = numberWithCommas(totalCasesArray[0]);
+        // Render charts
+        document.getElementById("total-world-cases").innerHTML = numberWithCommas(totalCasesArray[0]); // Shows the total cases into analytics.html
         chartWorldCases.setOption(optionWorldCases(dateArray.reverse(), totalCasesArray.reverse())); 
-        document.getElementById("total-world-deaths").innerHTML = numberWithCommas(totalDeathsArray[0]);
+        document.getElementById("total-world-deaths").innerHTML = numberWithCommas(totalDeathsArray[0]); // Shows the total deaths into analytics.html
         chartDeaths.setOption(optionDeaths(dateArray, totalDeathsArray.reverse())); 
-        document.getElementById("total-world-recovered").innerHTML = numberWithCommas(totalRecoveredArray[0]); 
+        document.getElementById("total-world-recovered").innerHTML = numberWithCommas(totalRecoveredArray[0]); // Shows the total recovered into analytics.html
         chartRecovered.setOption(optionRecovered(dateArray, totalRecoveredArray.reverse()));     
       });
  
@@ -78,7 +85,7 @@ $( function() {
   } );
 
 
-  // Report by Country Datepicker
+  // Report by Country Datepicker ////////////////////////////////////////////////////////////////////////////////
 
   $( function() {
     var dateFormat = "mm/dd/yy",
@@ -90,7 +97,7 @@ $( function() {
           dateFormat: "yy-mm-dd"
         })
         .on( "change", function() {
-          getCountryDatabyDate();
+          getCountryDatabyDate(); // Function defined into controller.js
           to.datepicker( "option", "minDate", getDate( this ) );
         }),
         
@@ -101,7 +108,7 @@ $( function() {
         dateFormat: "yy-mm-dd"
       })
       .on( "change", function() {
-        getCountryDatabyDate();
+        getCountryDatabyDate(); // Function defined into controller.js
         from.datepicker( "option", "maxDate", getDate( this ) );
       });
  
@@ -117,7 +124,7 @@ $( function() {
     }
   } );
 
-  // Comparison by Country Datepicker
+  // Comparison by Country Datepicker ////////////////////////////////////////////////////////////////////////////////
 
   $( function() {
     var dateFormat = "mm/dd/yy",
@@ -129,7 +136,7 @@ $( function() {
           dateFormat: "yy-mm-dd"
         })
         .on( "change", function() {
-          renderComparisonByCountriesChart();
+          renderComparisonByCountriesChart(); // Function defined into controller.js
           to.datepicker( "option", "minDate", getDate( this ) );
         }),
       to = $( "#to2" ).datepicker({
@@ -139,7 +146,7 @@ $( function() {
         dateFormat: "yy-mm-dd"
       })
       .on( "change", function() {
-        renderComparisonByCountriesChart();
+        renderComparisonByCountriesChart(); // Function defined into controller.js
         from.datepicker( "option", "maxDate", getDate( this ) );
       });
 
@@ -155,13 +162,15 @@ $( function() {
     }
   } );
 
-// Charts Library from https://echarts.apache.org/
+// ECharts Library from https://echarts.apache.org/
+
+// Globally Report charts ////////////////////////////////////////////////////////////////////////////////
 
 // COVID-19 world cases chart
 
-  var chartWorldCases = echarts.init(document.getElementById('total-world-cases-chart'));
-
-  function optionWorldCases(dates, cases){
+  var chartWorldCases = echarts.init(document.getElementById('total-world-cases-chart')); // Initiate ECharts
+  // Chart configuration
+  function optionWorldCases(dates, cases){ 
       return {
       baseOption: {
         title: {
@@ -172,7 +181,7 @@ $( function() {
             data:['Cases by day']
         },
         xAxis: {
-            data: dates
+            data: dates // Display the dates into the X axis
 
         },
         yAxis: {},
@@ -192,7 +201,7 @@ $( function() {
               color: '#da530b',
             }
         },
-            data: cases
+            data: cases // Display the total number of COVID-19s cases on the Y axis.
         }],
       },
   };
@@ -200,9 +209,9 @@ $( function() {
 
 // COVID-19 world deaths chart
  
-   var chartDeaths = echarts.init(document.getElementById('total-world-deaths-chart'));
-
-   function optionDeaths (dates, deaths) {
+   var chartDeaths = echarts.init(document.getElementById('total-world-deaths-chart')); // Initiate ECharts
+  // Chart configuration
+   function optionDeaths (dates, deaths) { 
      return {
        title: {
            text: 'COVID-19 World Deaths'
@@ -212,7 +221,7 @@ $( function() {
            data:['Deaths by day']
        },
        xAxis: {
-           data: dates
+           data: dates // Display the dates into the X axis
        },
        yAxis: {},
        grid: {
@@ -231,7 +240,7 @@ $( function() {
             color: '#da530b',
           }
         },
-           data: deaths
+           data: deaths // Display the total number of COVID-19s deaths on the Y axis.
        }]
     }
    };
@@ -239,9 +248,9 @@ $( function() {
 
 // COVID-19 world recovered chart
 
-  var chartRecovered = echarts.init(document.getElementById('total-world-recovered-chart'));
-
-  function optionRecovered (dates, recovered) {
+  var chartRecovered = echarts.init(document.getElementById('total-world-recovered-chart')); // Initiate ECharts
+  // Chart configuration
+  function optionRecovered (dates, recovered) { 
     return {
       title: {
           text: 'COVID-19 World Recovered'
@@ -251,7 +260,7 @@ $( function() {
           data:['Recovered by day']
       },
       xAxis: {
-          data: dates
+          data: dates // Display the dates into the X axis
       },
       yAxis: {},
       grid: {
@@ -270,15 +279,17 @@ $( function() {
               color: '#da530b',
             }
         },
-          data: recovered
+          data: recovered // Display the total number of COVID-19s recovered on the Y axis.
       }]
     }
   };
 
+// Report by country charts ////////////////////////////////////////////////////////////////////////////////
+
 // COVID-19 Country Cases chart
 
-var chartCountryCases = echarts.init(document.getElementById('total-cases-country-chart'));
-
+var chartCountryCases = echarts.init(document.getElementById('total-cases-country-chart')); // Initiate ECharts
+// Chart configuration
 function optionCountryCases (countryDates, countryCases, projectedDates, projectedCases){
   return {
     title: {
@@ -298,21 +309,21 @@ function optionCountryCases (countryDates, countryCases, projectedDates, project
     xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: countryDates.concat(projectedDates)
+      data: countryDates.concat(projectedDates) // Display the dates into the X axis
     },
     yAxis: {
       type: 'value'
     },
-    series: [
+    series: [ // Display the data into the Y axis.
       {
         name: 'Current',
         type: 'line',
-        data: countryCases
+        data: countryCases // Display the current cases on the Y axis
       },
       {
         name: 'Projected',
         type: 'line',
-        data: projectedCases
+        data: projectedCases // Display the projected cases on the Y axis when the checkbox is activated.
       },
     ]
   }
@@ -320,8 +331,8 @@ function optionCountryCases (countryDates, countryCases, projectedDates, project
 
 // COVID-19 Country deaths chart
  
-var chartCountryDeaths = echarts.init(document.getElementById('total-country-deaths-chart'));
-
+var chartCountryDeaths = echarts.init(document.getElementById('total-country-deaths-chart')); // Initiate ECharts
+// Chart configuration
  function optionCountryDeaths (countryDates, countryDeaths){
    return {
       title: {
@@ -332,7 +343,7 @@ var chartCountryDeaths = echarts.init(document.getElementById('total-country-dea
           data:['Deaths by day']
       },
       xAxis: {
-          data: countryDates
+          data: countryDates // Display the dates into the X axis
       },
       yAxis: {},
       grid: {
@@ -351,7 +362,7 @@ var chartCountryDeaths = echarts.init(document.getElementById('total-country-dea
               color: '#da530b',
             }
         },
-          data: countryDeaths
+          data: countryDeaths // Display the total number of COVID-19s deaths on the Y axis.
       }]
     }
 };
@@ -359,9 +370,9 @@ var chartCountryDeaths = echarts.init(document.getElementById('total-country-dea
 
 // COVID-19 Country Recovered chart
  
-var chartCountryRecovered = echarts.init(document.getElementById('total-country-recovered-chart'));
-
-function optionCountryRecovered (countryDates, countryrecovered){
+var chartCountryRecovered = echarts.init(document.getElementById('total-country-recovered-chart')); // Initiate ECharts
+// Chart configuration
+function optionCountryRecovered (countryDates, countryRecovered){
   return {
       title: {
           text: 'Recovered'
@@ -371,7 +382,7 @@ function optionCountryRecovered (countryDates, countryrecovered){
           data:['Recovered by day']
       },
       xAxis: {
-          data: countryDates
+          data: countryDates // Display the dates into the X axis
       },
       yAxis: {},
       grid: {
@@ -390,17 +401,17 @@ function optionCountryRecovered (countryDates, countryrecovered){
               color: '#da530b',
             }
         },
-          data: countryrecovered
+          data: countryRecovered // Display the total number of COVID-19s recovered on the Y axis.
       }]
   }   
 };
 
-// Comparison by country charts
+// Comparison by country charts ////////////////////////////////////////////////////////////////////////////////
 
 //COVID-19 comparison cases
 
-var chartComparisonCases = echarts.init(document.getElementById('comparison-by-country-cases-chart'));
-
+var chartComparisonCases = echarts.init(document.getElementById('comparison-by-country-cases-chart')); // Initiate ECharts
+// Chart configuration
 function optionComparisonCases (countriesDates, country1Cases, country2Cases, country1, country2) {
  return {title: {
       text: 'Cases'
@@ -427,7 +438,7 @@ function optionComparisonCases (countriesDates, country1Cases, country2Cases, co
     {
         type: 'category',
         boundaryGap: false,
-        data: countriesDates
+        data: countriesDates // Display the dates into the X axis
     }
   ],
   yAxis: [
@@ -435,20 +446,20 @@ function optionComparisonCases (countriesDates, country1Cases, country2Cases, co
           type: 'value'
       }
   ],
-  series: [
+  series: [ // Display the data into the Y axis.
       {
-          name: country1,
+          name: country1, // Display to the first country name selected from the country drop-down list.
           type: 'line',
           stack: 'total',
           areaStyle: {},
-          data: country1Cases
+          data: country1Cases // Display the total number of COVID-19s cases for the first country selected from the country drop-down list.
       },
       {
-          name: country2,
+          name: country2, // Display to the second country name selected from the country drop-down list.
           type: 'line',
           stack: 'total',
           areaStyle: {},
-          data: country2Cases
+          data: country2Cases // Display the total number of COVID-19s cases for the second country selected from the country drop-down list.
       }    
   ]
 }
@@ -456,8 +467,8 @@ function optionComparisonCases (countriesDates, country1Cases, country2Cases, co
 
 //COVID-19 comparison deaths
 
-var chartComparisonDeaths = echarts.init(document.getElementById('comparison-by-country-deaths-chart'));
-
+var chartComparisonDeaths = echarts.init(document.getElementById('comparison-by-country-deaths-chart')); // Initiate ECharts
+// Chart configuration
 function optionComparisonDeaths (countriesDates, country1Deaths, country2Deaths, country1, country2) {
   return {
   title: {
@@ -485,7 +496,7 @@ function optionComparisonDeaths (countriesDates, country1Deaths, country2Deaths,
     {
         type: 'category',
         boundaryGap: false,
-        data: countriesDates
+        data: countriesDates // Display the dates into the X axis
     }
   ],
   yAxis: [
@@ -493,20 +504,20 @@ function optionComparisonDeaths (countriesDates, country1Deaths, country2Deaths,
           type: 'value'
       }
   ],
-  series: [
+  series: [ // Display the data into the Y axis.
       {
-          name: country1,
+          name: country1, // Display to the first country name selected from the country drop-down list.
           type: 'line',
           stack: 'total',
           areaStyle: {},
-          data: country1Deaths
+          data: country1Deaths // Display the total number of COVID-19s deaths for the first country selected from the country drop-down list.
       },
       {
-          name: country2,
+          name: country2, // Display to the second country name selected from the country drop-down list.
           type: 'line',
           stack: 'total',
           areaStyle: {},
-          data: country2Deaths
+          data: country2Deaths // Display the total number of COVID-19s deaths for the second country selected from the country drop-down list.
       }    
   ]
 }
@@ -515,8 +526,8 @@ function optionComparisonDeaths (countriesDates, country1Deaths, country2Deaths,
 
 //COVID-19 comparison recovered
 
-var chartComparisonRecovered = echarts.init(document.getElementById('comparison-by-country-recovered-chart'));
-
+var chartComparisonRecovered = echarts.init(document.getElementById('comparison-by-country-recovered-chart')); // Initiate ECharts
+// Chart configuration
 function optionComparisonRecovered (countriesDates, country1Recovered, country2Recovered, country1, country2) {
   return {
     title: {
@@ -544,7 +555,7 @@ function optionComparisonRecovered (countriesDates, country1Recovered, country2R
     {
         type: 'category',
         boundaryGap: false,
-        data: countriesDates
+        data: countriesDates // Display the dates into the X axis
     }
   ],
   yAxis: [
@@ -552,20 +563,20 @@ function optionComparisonRecovered (countriesDates, country1Recovered, country2R
           type: 'value'
       }
   ],
-  series: [
+  series: [ // Display the data into the Y axis.
       {
-          name: country1,
+          name: country1, // Display to the first country name selected from the country drop-down list.
           type: 'line',
           stack: 'total',
           areaStyle: {},
-          data: country1Recovered
+          data: country1Recovered // Display the total number of COVID-19s recovered for the first country selected from the country drop-down list.
       },
       {
-          name: country2,
+          name: country2, // Display to the second country name selected from the country drop-down list.
           type: 'line',
           stack: 'total',
           areaStyle: {},
-          data: country2Recovered
+          data: country2Recovered // Display the total number of COVID-19s recovered for the second country selected from the country drop-down list.
       }    
   ]
 }
