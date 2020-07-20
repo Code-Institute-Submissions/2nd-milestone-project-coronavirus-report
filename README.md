@@ -17,8 +17,10 @@ which still has no vaccine and has meant a complete change in the way we live ou
 
 ### Main aims
 
-- To Provide a platform for users to review information about this new coronavirus, and check the situation both globally and in their respective countries.
-- To make the website interactive through the use of JavaScript, using different libraries and APIs available to create a great user experience.
+- To Provide a platform for users to review information about this new coronavirus, and check the situation 
+both globally and in their respective countries.
+- To make the website interactive through the use of JavaScript, using different libraries and APIs available 
+to create a great user experience.
 - To make it easy for users to make their way through each feature on the website, by having a clear menu bar. 
 - To create a design that would be fully responsive on all devices and screen sizes.
 
@@ -31,15 +33,18 @@ which still has no vaccine and has meant a complete change in the way we live ou
 
 #### Visitors to this website are searching for:
 
-- Information related to the COVID-19, due to the fact that it is a new disease that is affecting the whole world, and is at the moment of greatest concern worldwide. 
+- Information related to the COVID-19, due to the fact that it is a new disease that is affecting the whole world, and 
+is at the moment of greatest concern worldwide. 
 
 #### This project is the best way to help them achieve these things because:
 
-- This is a great platform to display the information required by users, because it allows you to interact with the data available about this new coronavirus.
-- There are similar platforms, but these do not allow users to interact much with the information, instead Coronavirus Report allows you to choose the range of dates to consult 
+- This is a great platform to display the information required by users, because it allows you to interact with the data 
+available about this new coronavirus.
+- There are similar platforms, but these do not allow users to interact much with the information, instead Coronavirus 
+Report allows you to choose the range of dates to consult 
   the data of your interest, and then these are presented in different charts.
-- Coronavirus Report does something that other platforms do not have, and the reason is that it is able to predict future cases in any country through the use of 
-  machine learning technology.
+- Coronavirus Report does something that other platforms do not have, and the reason is that it is able to predict future 
+cases in any country through the use of machine learning technology.
 - This website also has a small section with summary information about the coronavirus.
 - This platform is interested in knowing what its users think, therefore it has a contact page.
 
@@ -55,12 +60,40 @@ which still has no vaccine and has meant a complete change in the way we live ou
 - As a user, I want a website that shows a summary about the new coronavirus.
 - As a user, I want a website that has a contact page, where I can express my questions or suggestions.
 
+### Design Process
+
+1. **Strategy Plane:** My goal in creating this project was to provide a platform for users to review information 
+about the COVID-19 and check both the worldwide and any country situation, in a clear and simple way.
+
+2. **Scope:** For users, I wanted to offer relevant information for them, since this new coronavirus has burst into our lives in a 
+very sudden way, and it is also a very current topic, therefore, it was necessary to show the situation that is lived worldwide and
+ at the same time provide information from each country. To do this, I created a welcome page with quick access to the desired 
+ information, a page with different analyses displayed in order by date, so users can check if the curve is flattened or not.
+
+3. **Structure:** On the analylics page, I wanted to show them a series of charts displayed in 3 sections, the first one for global 
+reports, showing information in 3 bar charts for covid cases, covid deaths and covid recoveries. The second for country reports, 
+like the first one, shows 3 charts with the same relevant data as before, only with the difference that it will show a projection 
+of cases. The third shows the same data as the first one, only with the difference that you can contrast the information between two countries.
+
+4. **Skeleton:**
+  - Home page wireframe.
+  - Analytics page page wireframe.
+  - COVID-19 Information page wireframe.
+  - Contact Us page wireframe.
+
+5. **Surface:** In general, blue tones were chosen for the navigation bar and footer, as it is a pleasant colour to look at. The font used
+ for the website was the default Bootstrap, and a simple and practical design was chosen, making use of a hero image on the Home page and 
+ 2 cover images for the COVID-19 Information and Contact Us pages. For the Analytics page, a white background color (#FFF) was used, to 
+ better display the graphics for the users to view. In the COVID-19 Information page, I opted to use bright colors and images, in order to 
+ attract the user's attention and to keep the information provided in his/her mind. For the Contact Us page, a white background was used, 
+ trying to be as minimalist as possible.
+
 ## Features 
 
 ### Existing Features
 
-The project consists of 4 pages, which can be reached through the **navigation bar** with conventional placing of logo (top left). Each page has a **footer** with copyright information.
-The website is totally responsive. 
+The project consists of 4 pages, which can be reached through the **navigation bar** with conventional placing of logo (top left). Each page has
+ a **footer** with copyright information. The website is totally responsive. 
 
 #### Home Page
 
@@ -69,26 +102,32 @@ It is responsible for welcoming future users. It is divided into 3 sections:
 - **Welcome section:** This section has a hero image at the top, with a brief description of the website and 3 buttons that when pressed will
   take you directly to different sections on the Analytics Page.
 
-- **About Us section:** In this section you will find a more detailed description about Coronavirus Report, and in addition the website description is accompanied by an image of the virus.
+- **About Us section:** In this section you will find a more detailed description about Coronavirus Report, and in addition the website description 
+is accompanied by an image of the virus.
 
-- **Information section:** This section contains some information about COVID-19 and a button, which when pressed, it will direct you to the COVID-19 Information page.
+- **Information section:** This section contains some information about COVID-19 and a button, which when pressed, it will direct you to the COVID-19 
+Information page.
 
 #### Analytics Page
 
 It is responsible to display the COVID-19 information to the users. This page contains 3 sections.
 
-- **Globally Report:** This section will display information about the global reports of this new virus, where through some datepicker, the user can select a date range of his/her interest, and once that is done, the information will be shown in 3 charts.
+- **Globally Report:** This section will display information about the global reports of this new virus, where through some datepicker, the user can select 
+a date range of his/her interest, and once that is done, the information will be shown in 3 charts.
   - *Chart 1:* Displays the total worldwide cases.
   - *Chart 2:* Displays the total worldwide deaths.
   - *Chart 3:* Displays the total worldwide recovered. 
 
-- **Report by Country:** This section will display information about the country reports on this new virus, where the user must first select a country of his/her interest, then the user must select a date range using the datepicker, and once that is done, the information will be displayed in 3 charts. If the user wants, he can also select the projected cases checkbox, which will be activated showing 2 weeks of forecast in the selected country.
+- **Report by Country:** This section will display information about the country reports on this new virus, where the user must first select a country of his/her
+ interest, then the user must select a date range using the datepicker, and once that is done, the information will be displayed in 3 charts. If the user wants, 
+ he can also select the projected cases checkbox, which will be activated showing 2 weeks of forecast in the selected country.
 
   - *Chart 1:* Displays the total country cases. If the user press the projected checkbox, it will display 2 weeks of projection.
   - *Chart 2:* Displays the total country deaths.
   - *Chart 3:* Displays the total country recovered.
 
-- **Comparison by Country:** This section will display information about the country reports for 2 countries, where the user must first select 2 country of his/her interest, then the user must select a date range using the datepicker, and once that is done, the information will be displayed in 3 charts.
+- **Comparison by Country:** This section will display information about the country reports for 2 countries, where the user must first select 2 country of his/her 
+interest, then the user must select a date range using the datepicker, and once that is done, the information will be displayed in 3 charts.
 
   - *Chart 1:* Displays the total countries cases.
   - *Chart 2:* Displays the total countries deaths.
@@ -96,7 +135,8 @@ It is responsible to display the COVID-19 information to the users. This page co
 
 #### COVID-19 Information Page
 
-This page contains useful information about this new coronavirus,and also has a cover image, page title and a brief description of the page. It is divided into 3 sections, and every section has an image.
+This page contains useful information about this new coronavirus,and also has a cover image, page title and a brief description of the page. It is divided into 3 sections,
+ and every section has an image.
 
 - **What you need to know:** This section shows a resume with relevant information the COVID-19.
 
@@ -106,11 +146,13 @@ This page contains useful information about this new coronavirus,and also has a 
 
 #### Contact Us Page
 
-This page contains a cover image, page title and a small message. It has a **contact form** which request user name, email and a box to leave a message. Once the user finishes writing his/her message, the contact form has a Send Button, which when pressed, will display a mini modal window with a thank you message.
+This page contains a cover image, page title and a small message. It has a **contact form** which request user name, email and a box to leave a message. Once the user finishes 
+writing his/her message, the contact form has a Send Button, which when pressed, will display a mini modal window with a thank you message.
 
 ### Features Left to Implement
 
-In the future I would like to implement in **Comparison by Country section** the possibility to *compare more than 2 countries at the same time*, it was something contemplated at the beginning of this project, but due to the lack of time, it could not be implemented.
+In the future I would like to implement in **Comparison by Country section** the possibility to *compare more than 2 countries at the same time*, it was something
+ contemplated at the beginning of this project, but due to the lack of time, it could not be implemented.
 
 ## Technologies Used
 
@@ -147,6 +189,9 @@ In the future I would like to implement in **Comparison by Country section** the
 - <a href= "https://www.emailjs.com/" target= "_blank">Email JS</a>
   - The project uses **Email JS** to implement a functional contact us page.
 
+- <a href="https://fontawesome.com/" target="_blank">FontAwesome</a>
+  - The project uses free **FontAwesome** icons.
+
 - <a href="https://www.postman.com/" target="_blank">Postman</a>
   - The project uses **Postman**  to test the APIs used to request information about the COVID-19.
 
@@ -155,6 +200,9 @@ In the future I would like to implement in **Comparison by Country section** the
 
 - <a href= "https://github.com/" target= "_blank">GitHub</a>
   - The project uses **GitHub** to host the source code, and deploy the website using GitHub pages.
+
+- <a href="https://pencil.evolus.vn/" target="_blank">Pencil</a>
+  - The project uses **Pencil** version 3.1.0 to create the wireframes.
 
 - <a href= "https://affinity.serif.com/en-gb/designer/" target= "_blank">Affinity Designer</a>
   - The project uses **Affinity Designer** version 1.6.5.123, to make the website logo.
@@ -172,7 +220,8 @@ This project was developed using **Gitpod** and **Visual Studio Code**.
 
 ### Deploying to GitHub Pages
 
-To deploy this page to GitHub Pages from its <a href= "https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report" target="_blank">GitHub repository</a>, the following steps were taken:
+To deploy this page to GitHub Pages from its <a href= "https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report" target="_blank">GitHub repository</a>, 
+the following steps were taken:
 
 1. Log into **GitHub**.
 2. Open the **'Settings'** section of the project repository in GitHub.

@@ -212,6 +212,12 @@ body, html {
     width: 200px;
 }
 
+#inputFrom2 > input,
+#inputTo2 > input {
+    margin-top: 10px;
+    width: 200px;
+}
+
 .countryDropDown {
     margin-top: 10px;
 }
@@ -319,7 +325,6 @@ body, html {
 #covid-19-general-info p a:hover {
     color: #fafafa;
     text-decoration: none;
-    text-shadow: rgba(0, 0, 0, 0.5);
 }
 
 /* About Coronaviruses Section */
@@ -372,7 +377,6 @@ body, html {
 #protect-from-coronavirus-section p a:hover {
     color: #a90000;
     text-decoration: none;
-    text-shadow: rgba(0, 0, 0, 0.5);
 }
 
 /* ----------------------------------------End Page */

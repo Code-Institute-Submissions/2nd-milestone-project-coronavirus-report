@@ -8,7 +8,6 @@
 
 The testing process is outlined below. It includes:
 
-- Testing User Stories.
 - Validating HTML, CSS and Javascript code.
 - Testing website compatibility on different browsers.
 - Testing responsiveness in different screen sizes.
@@ -16,9 +15,16 @@ The testing process is outlined below. It includes:
 - Manually testing on Analytics page, checking all the charts renders in properly way.
 - Manually testing on Contact Us page, checking the contact form is working correctly.
 
-### Testing User Stories 
-
 ### Validating HTML, CSS and Javascript code.
+
+In order for the written code to meet all requirements, the following tests were performed.
+
+#### HTML
+
+#### CSS
+
+I checked my CSS code with the <a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C Markup Validation Service</a>. 
+This test did not produce any error, it only shows 3 warnings.
 
 ### Compatibility with different browsers
 
