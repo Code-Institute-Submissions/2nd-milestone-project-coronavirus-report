@@ -162,6 +162,10 @@ In the future I would like to implement in **Comparison by Country section** the
 - <a href= "https://www.adobe.com/ie/" target= "_blank">Adobe Photoshop</a>
   - The project uses **Adobe Photoshop CS6** portable version 13.0.0, to improve the images used in the website.
 
+## Testing
+
+Please view the complete testing process in this separate document <a href="" target="_blank">here</a>.
+
 ## Deployment
 
 This project was developed using **Gitpod** and **Visual Studio Code**. 
