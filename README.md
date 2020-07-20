@@ -26,7 +26,7 @@ which still has no vaccine and has meant a complete change in the way we live ou
 
 #### The ideal user for this website is:
 
-- English speaking, due the website language.
+- English speaking, due to the website language.
 - Who ideally has a good internet connection.
 
 #### Visitors to this website are searching for:
@@ -41,6 +41,7 @@ which still has no vaccine and has meant a complete change in the way we live ou
 - Coronavirus Report does something that other platforms do not have, and the reason is that it is able to predict future cases in any country through the use of 
   machine learning technology.
 - This website also has a small section with summary information about the coronavirus.
+- This platform is interested in knowing what its users think, therefore it has a contact page.
 
 ### User Stories
 
@@ -52,7 +53,64 @@ which still has no vaccine and has meant a complete change in the way we live ou
   I would like to know about future cases as well.
 - As a user, I would like to make a comparison between 2 countries to contrast how they are dealing with the threat of the coronavirus.
 - As a user, I want a website that shows a summary about the new coronavirus.
+- As a user, I want a website that has a contact page, where I can express my questions or suggestions.
 
+## Features 
+
+### Existing Features
+
+The project consists of 4 pages, which can be reached through the **navigation bar** with conventional placing of logo (top left). Each page has a **footer** with copyright information.
+The website is totally responsive. 
+
+#### Home Page
+
+It is responsible for welcoming future users. It is divided into 3 sections:
+
+- **Welcome section:** This section has a hero image at the top, with a brief description of the website and 3 buttons that when pressed will
+  take you directly to different sections on the Analytics Page.
+
+- **About Us section:** In this section you will find a more detailed description about Coronavirus Report, and in addition the website description is accompanied by an image of the virus.
+
+- **Information section:** This section contains some information about COVID-19 and a button, which when pressed, it will direct you to the COVID-19 Information page.
+
+#### Analytics Page
+
+It is responsible to display the COVID-19 information to the users. This page contains 3 sections.
+
+- **Globally Report:** This section will display information about the global reports of this new virus, where through some datepicker, the user can select a date range of his/her interest, and once that is done, the information will be shown in 3 charts.
+  - *Chart 1:* Displays the total worldwide cases.
+  - *Chart 2:* Displays the total worldwide deaths.
+  - *Chart 3:* Displays the total worldwide recovered. 
+
+- **Report by Country:** This section will display information about the country reports on this new virus, where the user must first select a country of his/her interest, then the user must select a date range using the datepicker, and once that is done, the information will be displayed in 3 charts. If the user wants, he can also select the projected cases checkbox, which will be activated showing 2 weeks of forecast in the selected country.
+
+  - *Chart 1:* Displays the total country cases. If the user press the projected checkbox, it will display 2 weeks of projection.
+  - *Chart 2:* Displays the total country deaths.
+  - *Chart 3:* Displays the total country recovered.
+
+- **Comparison by Country:** This section will display information about the country reports for 2 countries, where the user must first select 2 country of his/her interest, then the user must select a date range using the datepicker, and once that is done, the information will be displayed in 3 charts.
+
+  - *Chart 1:* Displays the total countries cases.
+  - *Chart 2:* Displays the total countries deaths.
+  - *Chart 3:* Displays the total countries recovered.
+
+#### COVID-19 Information Page
+
+This page contains useful information about this new coronavirus,and also has a cover image, page title and a brief description of the page. It is divided into 3 sections, and every section has an image.
+
+- **What you need to know:** This section shows a resume with relevant information the COVID-19.
+
+- **About Coronaviruses:** This section shows summary information on what coronaviruses are.
+
+- **Protect yourself and other from coronavirus:** This section contains some advice on how to avoid getting coronavirus disease and protect others from getting it.
+
+#### Contact Us Page
+
+This page contains a cover image, page title and a small message. It has a **contact form** which request user name, email and a box to leave a message. Once the user finishes writing his/her message, the contact form has a Send Button, which when pressed, will display a mini modal window with a thank you message.
+
+### Features Left to Implement
+
+In the future I would like to implement in **Comparison by Country section** the possibility to *compare more than 2 countries at the same time*, it was something contemplated at the beginning of this project, but due to the lack of time, it could not be implemented.
 
 ## Technologies Used
 
