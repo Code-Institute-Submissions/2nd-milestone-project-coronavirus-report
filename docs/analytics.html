@@ -1,285 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="16x16">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.0.1/css/countrySelect.min.css" integrity="sha512-HHSUgqDtmyVfGT0pdLVRKcktf9PfLMfFzoiBjh9NPBzw94YFTS5DIwZ12Md/aDPcrkOstXBp9uSAOCl5W2/AOQ==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="icon"
+      href="assets/images/favicon.png"
+      type="image/png"
+      sizes="16x16"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.0.1/css/countrySelect.min.css"
+      integrity="sha512-HHSUgqDtmyVfGT0pdLVRKcktf9PfLMfFzoiBjh9NPBzw94YFTS5DIwZ12Md/aDPcrkOstXBp9uSAOCl5W2/AOQ=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Coronavirus Report | Analytics</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark background-color-navbar-footer shadow">
-            <!-- Brand -->   
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/images/coronavirus_report_logo.png" width="150" height="40" alt="Coronavirus Report logo">
-            </a>
-            <!-- Toggler/collapsible Button / resource from https://www.w3schools.com/ -->
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false">
-            <span class="navbar-toggler-icon"></span></button>
-        
-            <!-- Navbar links -->
-            <div id="collapsibleNavbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav ml-auto menu-collapse-align">
-                    <li class="nav-item mr-2"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item mr-2"><a class="nav-link active" href="analytics.html">Analytics</a></li>
-                    <li class="nav-item mr-2"><a class="nav-link" href="covid-19_information.html">COVID-19 Information</a></li>
-                    <li class="nav-item mr-2"><a class="nav-link" href="contact_us.html">Contact Us</a></li>
-                </ul>
-            </div>  
-        </nav>
-         <!-- End Navbar -->
+      <!-- Navbar -->
+      <nav
+        class="navbar navbar-expand-lg navbar-dark background-color-navbar-footer shadow"
+      >
+        <!-- Brand -->
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="assets/images/coronavirus_report_logo.png"
+            width="150"
+            height="40"
+            alt="Coronavirus Report logo"
+          />
+        </a>
+        <!-- Toggler/collapsible Button / resource from https://www.w3schools.com/ -->
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+          aria-controls="collapsibleNavbar"
+          aria-expanded="false"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div id="collapsibleNavbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav ml-auto menu-collapse-align">
+            <li class="nav-item mr-2">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item mr-2">
+              <a class="nav-link active" href="analytics.html">Analytics</a>
+            </li>
+            <li class="nav-item mr-2">
+              <a class="nav-link" href="covid-19_information.html"
+                >COVID-19 Information</a
+              >
+            </li>
+            <li class="nav-item mr-2">
+              <a class="nav-link" href="contact_us.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- End Navbar -->
     </header>
 
-         <!-- Title -->
+    <!-- Title -->
     <section class="container-fluid title-container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="titles-style">Analytics</h2>
-                <hr class="block-title-divider">
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <h2 class="titles-style">Analytics</h2>
+          <hr class="block-title-divider" />
         </div>
+      </div>
     </section>
 
-        <!-- Globally Report container -->
+    <!-- Globally Report container -->
 
     <section id="globally-report" class="container shadow margin-container">
-        <div class="row sub-title-color">
-            <div class="col-12">
-                <h3 class="sub-title-container">Globally Report</h3>
-            </div>
+      <div class="row sub-title-color">
+        <div class="col-12">
+          <h3 class="sub-title-container">Globally Report</h3>
         </div>
+      </div>
 
-        <!-- Datepickers -->
+      <!-- Datepickers -->
 
-        <div class="row datepicker-container">
-            <div class="col-lg-6 col-xs-12">
-                <label for="from">From:</label>
-                <input type="text" id="from" name="from">
-            </div>
-            <div class="col-lg-6 col-xs-12">
-                <label for="to">Until:</label>
-                <input type="text" id="to" name="to">
-            </div>
-            <div class="col-12">
-                <hr class="block-container-divider">
-            </div>
+      <div class="row datepicker-container">
+        <div class="col-lg-6 col-xs-12">
+          <label for="from">From:</label>
+          <input type="text" id="from" name="from" />
         </div>
-        <!-- End Datepickers -->
-
-        <!-- COVID-19 Cases Chart -->
-
-        <div class="row">
-            <div class="col-lg-4 col-xs-12 info-container">
-                <h3 class="info-title">COVID-19 Cases:</h3>
-                <h4 id="total-world-cases" class="info-quantity"></h4>
-            </div>
-            <div class="col-lg-8 col-xs-12">
-                <div id="total-world-cases-chart"></div>
-            </div>
+        <div class="col-lg-6 col-xs-12">
+          <label for="to">Until:</label>
+          <input type="text" id="to" name="to" />
         </div>
-
-        <!-- COVID-19 Deaths Chart -->
-
-        <div class="row">
-            <div class="col-lg-4 col-xs-12 info-container">
-                <h3 class="info-title ">Deaths:</h3>
-                <h4 id="total-world-deaths" class="info-quantity"></h4>
-            </div>
-            <div class="col-lg-8 col-xs-12">
-                <div id="total-world-deaths-chart"></div>
-            </div>
+        <div class="col-12">
+          <hr class="block-container-divider" />
         </div>
+      </div>
+      <!-- End Datepickers -->
 
-        <!-- COVID-19 Recovered Chart -->
+      <!-- COVID-19 Cases Chart -->
 
-        <div class="row">
-            <div class="col-lg-4 col-xs-12 info-container">
-                <h3 class="info-title ">Recovered:</h3>
-                <h4 id="total-world-recovered" class="info-quantity"></h4>
-            </div>
-            <div class="col-lg-8 col-xs-12">
-                <div id="total-world-recovered-chart"></div>
-            </div>
+      <div class="row">
+        <div class="col-lg-4 col-xs-12 info-container">
+          <h3 class="info-title">COVID-19 Cases:</h3>
+          <h4 id="total-world-cases" class="info-quantity"></h4>
         </div>
+        <div class="col-lg-8 col-xs-12">
+          <div id="total-world-cases-chart"></div>
+        </div>
+      </div>
 
+      <!-- COVID-19 Deaths Chart -->
+
+      <div class="row">
+        <div class="col-lg-4 col-xs-12 info-container">
+          <h3 class="info-title">Deaths:</h3>
+          <h4 id="total-world-deaths" class="info-quantity"></h4>
+        </div>
+        <div class="col-lg-8 col-xs-12">
+          <div id="total-world-deaths-chart"></div>
+        </div>
+      </div>
+
+      <!-- COVID-19 Recovered Chart -->
+
+      <div class="row">
+        <div class="col-lg-4 col-xs-12 info-container">
+          <h3 class="info-title">Recovered:</h3>
+          <h4 id="total-world-recovered" class="info-quantity"></h4>
+        </div>
+        <div class="col-lg-8 col-xs-12">
+          <div id="total-world-recovered-chart"></div>
+        </div>
+      </div>
     </section>
-        <!-- End Globally Report container -->
+    <!-- End Globally Report container -->
 
-        <!-- Report by Country container -->
+    <!-- Report by Country container -->
 
     <section id="report-by-country" class="container shadow margin-container">
-        <div class="row sub-title-color">
-            <div class="col-12">
-                <h3 class="sub-title-container">Report by Country</h3>
-            </div>
+      <div class="row sub-title-color">
+        <div class="col-12">
+          <h3 class="sub-title-container">Report by Country</h3>
         </div>
+      </div>
 
-        <!-- Country dropdown, datepicker and Projected checkbox -->
+      <!-- Country dropdown, datepicker and Projected checkbox -->
 
-        <div class="row datepicker-container">
-            <div class="col-lg-3 col-xs-12 countryDropDown">
-                <input type="text" id="country" />
-                <input type="hidden" id="country_code" />
-            </div>
-            <div id="inputFrom" class="col-lg-3 col-xs-12">
-                <input type="text" id="from1" name="from" placeholder="From">
-            </div>
-            <div id="inputTo" class="col-lg-3 col-xs-12">
-                <input type="text" id="to1" name="to" placeholder="Until">
-            </div>
-            <div class="col-lg-3 col-xs-12 countryCheckBock">
-                <input type="checkbox" id="projected-cases" name="projected-cases" value="cases">
-                <label for="projected-cases"> Projected Cases</label>
-            </div>
-            <div class="col-12">
-                <hr class="block-container-divider">
-            </div>
+      <div class="row datepicker-container">
+        <div class="col-lg-3 col-xs-12 countryDropDown">
+          <input type="text" id="country" />
+          <input
+            onchange="getCountryDatabyDate();"
+            type="hidden"
+            id="country_code"
+          />
         </div>
-
-        <!-- End -->
-
-        <!-- Country Cases Chart -->
-
-        <div class="row">
-            <div class="col-lg-4 col-xs-12 info-container">
-                <h3 class="info-title">COVID-19 Cases:</h3>
-                <h4 id="total-country-cases" class="info-quantity"></h4>
-            </div>
-            <div class="col-lg-8 col-xs-12">
-                <div id="total-cases-country-chart"></div>
-            </div>
+        <div id="inputFrom" class="col-lg-3 col-xs-12">
+          <label for="from">From:</label>
+          <input type="text" id="from1" name="from" placeholder="From" />
         </div>
-
-        <!-- Country Deaths Chart -->
-
-        <div class="row">
-            <div class="col-lg-4 col-xs-12 info-container">
-                <h3 class="info-title ">Deaths:</h3>
-                <h4 id="total-country-deaths" class="info-quantity"></h4>
-            </div>
-            <div class="col-lg-8 col-xs-12">
-                <div id="total-country-deaths-chart"></div>
-            </div>
+        <div id="inputTo" class="col-lg-3 col-xs-12">
+          <label for="to">Until:</label>
+          <input type="text" id="to1" name="to" placeholder="Until" />
         </div>
-
-        <!-- Country Recovered Chart -->
-
-        <div class="row">
-            <div class="col-lg-4 col-xs-12 info-container">
-                <h3 class="info-title ">Recovered:</h3>
-                <h4 id="total-country-recovered" class="info-quantity"></h4>
-            </div>
-            <div class="col-lg-8 col-xs-12">
-                <div id="total-country-recovered-chart"></div>
-            </div>
+        <div class="col-lg-3 col-xs-12 countryCheckBock">
+          <input
+            type="checkbox"
+            id="projected-cases"
+            name="projected-cases"
+            value="cases"
+          />
+          <label for="projected-cases"> Projected Cases</label>
         </div>
+        <div class="col-12">
+          <hr class="block-container-divider" />
+        </div>
+      </div>
+
+      <!-- End -->
+
+      <!-- Country Cases Chart -->
+
+      <div class="row">
+        <div class="col-lg-4 col-xs-12 info-container">
+          <h3 class="info-title">COVID-19 Cases:</h3>
+          <h4 id="total-country-cases" class="info-quantity"></h4>
+        </div>
+        <div class="col-lg-8 col-xs-12">
+          <div id="total-cases-country-chart"></div>
+        </div>
+      </div>
+
+      <!-- Country Deaths Chart -->
+
+      <div class="row">
+        <div class="col-lg-4 col-xs-12 info-container">
+          <h3 class="info-title">Deaths:</h3>
+          <h4 id="total-country-deaths" class="info-quantity"></h4>
+        </div>
+        <div class="col-lg-8 col-xs-12">
+          <div id="total-country-deaths-chart"></div>
+        </div>
+      </div>
+
+      <!-- Country Recovered Chart -->
+
+      <div class="row">
+        <div class="col-lg-4 col-xs-12 info-container">
+          <h3 class="info-title">Recovered:</h3>
+          <h4 id="total-country-recovered" class="info-quantity"></h4>
+        </div>
+        <div class="col-lg-8 col-xs-12">
+          <div id="total-country-recovered-chart"></div>
+        </div>
+      </div>
     </section>
 
-        <!-- End Report by Country container -->
+    <!-- End Report by Country container -->
 
-        <!-- Comparison by Country container -->
+    <!-- Comparison by Country container -->
 
-        <section id="comparison-by-country" class="container shadow margin-container">
-            <div class="row sub-title-color">
-                <div class="col-12">
-                    <h3 class="sub-title-container">Comparison by Country</h3>
-                </div>
-            </div>
+    <section
+      id="comparison-by-country"
+      class="container shadow margin-container"
+    >
+      <div class="row sub-title-color">
+        <div class="col-12">
+          <h3 class="sub-title-container">Comparison by Country</h3>
+        </div>
+      </div>
 
-             <!-- Countries dropdown and datepicker  -->
+      <!-- Countries dropdown and datepicker  -->
 
-            <div class="row datepicker-container">
-                <div class="col-lg-3 col-xs-12 countryDropDown">
-                    <input type="text" id="country1" />
-                    <input type="hidden" id="country1_code" />
-                </div>
-                <div class="col-lg-3 col-xs-12 countryDropDown">
-                    <input type="text" id="country2" />
-                    <input type="hidden" id="country2_code" />
-                </div>
-                <div id="inputFrom2" class="col-lg-3 col-xs-12">
-                    <input type="text" id="from2" name="from" placeholder="From">
-                </div>
-                <div id="inputTo2" class="col-lg-3 col-xs-12">
-                    <input type="text" id="to2" name="to" placeholder="Until">
-                </div>
-                <div class="col-12">
-                    <hr class="block-container-divider">
-                </div>
-            </div>
+      <div class="row datepicker-container">
+        <div class="col-lg-3 col-xs-12 countryDropDown">
+          <input type="text" id="country1" />
+          <input
+            onchange="renderComparisonByCountriesChart();"
+            type="hidden"
+            id="country1_code"
+          />
+        </div>
+        <div class="col-lg-3 col-xs-12 countryDropDown">
+          <input type="text" id="country2" />
+          <input
+            onchange="renderComparisonByCountriesChart();"
+            type="hidden"
+            id="country2_code"
+          />
+        </div>
+        <div id="inputFrom2" class="col-lg-3 col-xs-12">
+          <label for="from">From:</label>
+          <input type="text" id="from2" name="from" placeholder="From" />
+        </div>
+        <div id="inputTo2" class="col-lg-3 col-xs-12">
+          <label for="to">Until:</label>
+          <input type="text" id="to2" name="to" placeholder="Until" />
+        </div>
+        <div class="col-12">
+          <hr class="block-container-divider" />
+        </div>
+      </div>
 
-            <!-- End -->
+      <!-- End -->
 
-        <!-- Comparison by Country Cases Chart -->
+      <!-- Comparison by Country Cases Chart -->
 
-            <div class="row">
-                <div class="col-lg-4 col-xs-12 info-container">
-                    <h3 class="info-title">Countries:</h3>
-                    <h5 id="country1-cases" class="info-quantity"></h5>
-                    <h5 id="country2-cases" class="info-quantity"></h5>
-                </div>
-                <div class="col-lg-8 col-xs-12">
-                    <div id="comparison-by-country-cases-chart"></div>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-lg-4 col-xs-12 info-container">
+          <h3 class="info-title">Countries:</h3>
+          <div id="countries_comparison_cases"></div>
+          <h5 id="country1-cases" class="info-quantity"></h5>
+          <h5 id="country2-cases" class="info-quantity"></h5>
+        </div>
+        <div class="col-lg-8 col-xs-12">
+          <div id="comparison-by-country-cases-chart"></div>
+        </div>
+      </div>
 
-        <!-- Comparison by Country Deaths Chart -->
+      <!-- Comparison by Country Deaths Chart -->
 
-            <div class="row">
-                <div class="col-lg-4 col-xs-12 info-container">
-                    <h3 class="info-title">Countries:</h3>
-                    <h5 id="country1-deaths" class="info-quantity"></h5>
-                    <h5 id="country2-deaths" class="info-quantity"></h5>
-                </div>
-                <div class="col-lg-8 col-xs-12">
-                    <div id="comparison-by-country-deaths-chart"></div>
-                </div>
-            </div>
-       
+      <div class="row">
+        <div class="col-lg-4 col-xs-12 info-container">
+          <h3 class="info-title">Countries:</h3>
+          <div id="countries_comparison_deaths"></div>
+          <h5 id="country1-deaths" class="info-quantity"></h5>
+          <h5 id="country2-deaths" class="info-quantity"></h5>
+        </div>
+        <div class="col-lg-8 col-xs-12">
+          <div id="comparison-by-country-deaths-chart"></div>
+        </div>
+      </div>
 
-        <!-- Comparison by Country Recovered Chart -->
+      <!-- Comparison by Country Recovered Chart -->
 
-            <div class="row">
-                <div class="col-lg-4 col-xs-12 info-container">
-                    <h3 class="info-title">Countries:</h3>
-                    <h5 id="country1-recovered" class="info-quantity"></h5>
-                    <h5 id="country2-recovered" class="info-quantity"></h5>
-                </div>
-                <div class="col-lg-8 col-xs-12">
-                    <div id="comparison-by-country-recovered-chart"></div>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-lg-4 col-xs-12 info-container">
+          <h3 class="info-title">Countries:</h3>
+          <div id="countries_comparison_recovered"></div>
+          <h5 id="country1-recovered" class="info-quantity"></h5>
+          <h5 id="country2-recovered" class="info-quantity"></h5>
+        </div>
+        <div class="col-lg-8 col-xs-12">
+          <div id="comparison-by-country-recovered-chart"></div>
+        </div>
+      </div>
     </section>
 
-        <!-- End Comparison by Country container -->
+    <!-- End Comparison by Country container -->
 
-        <!-- Footer -->
+    <!-- Footer -->
     <footer class="container-fluid background-color-navbar-footer">
-        <div class="row">
-            <div class="col-12">
-                <p>Copyright © All Rights Reserved 2020</p>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <p>Copyright © All Rights Reserved 2020</p>
         </div>
+      </div>
     </footer>
-        <!-- End Footer -->
+    <!-- End Footer -->
 
-        <!-- JavaScript -->
+    <!-- JavaScript -->
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.8.0/echarts.min.js" integrity="sha512-OvWfXEXFlgwaMYESoKZRrPGq9Ndjcf7pMgp+NjbUNeqEA1OOOUbLgquJGOzvh7H78qinNObGwRiFIj22es61Eg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.0.1/js/countrySelect.min.js" integrity="sha512-d7XH8vihneI33S/Ol/TstfgCf897RvIpPrEM+k0KQdTia4/zHpVB1Vo3oyic0wLEOph5mSqg3bAS0hs3l8dhIg==" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.8.0/echarts.min.js"
+      integrity="sha512-OvWfXEXFlgwaMYESoKZRrPGq9Ndjcf7pMgp+NjbUNeqEA1OOOUbLgquJGOzvh7H78qinNObGwRiFIj22es61Eg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.0.1/js/countrySelect.min.js"
+      integrity="sha512-d7XH8vihneI33S/Ol/TstfgCf897RvIpPrEM+k0KQdTia4/zHpVB1Vo3oyic0wLEOph5mSqg3bAS0hs3l8dhIg=="
+      crossorigin="anonymous"
+    ></script>
     <script src="assets/js/controller.js"></script>
     <script src="assets/js/charts.js"></script>
-
-</body>
+  </body>
 </html>

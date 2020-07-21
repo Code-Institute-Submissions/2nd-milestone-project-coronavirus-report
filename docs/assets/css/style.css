@@ -1,41 +1,41 @@
-body, html {
-    margin: 0;
-    height: 100%;
+body,
+html {
+  margin: 0;
+  height: 100%;
 }
-
 
 /*--------------------------------------------Other useful classes (uses for several elements)*/
 
 .background-color-navbar-footer {
-    background-color:#062f58;
+  background-color: #062f58;
 }
 
 .titles-style {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 2.5rem;
-    padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  padding: 15px;
 }
 
 .block-title-divider {
-    width: 90%;
-    height: 3px;
-    border: 0;
-    background-color: #094986;
-    margin-bottom: 50px;
+  width: 90%;
+  height: 3px;
+  border: 0;
+  background-color: #094986;
+  margin-bottom: 50px;
 }
 
 /*--------------------------------------------Navbar*/
 
 .menu-collapse-align {
-    margin-right: 5px;
-    text-align: center;
+  margin-right: 5px;
+  text-align: center;
 }
 
 .navbar .navbar-nav a {
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /*--------------------------------------------Home Page*/
@@ -43,120 +43,121 @@ body, html {
 /*Image and Welcome message section*/
 
 .welcome-img-container {
-    height: 100vh;
-    min-height: 600px;
+  height: 100vh;
+  min-height: 600px;
 
-    background: url('../images/img_001.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: url("../images/img_001.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    position: relative;
-}  
+  position: relative;
+}
 
 .opaque-overlay-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .jumbotron {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .jumbotron-header {
-    color: white;
-    font-weight: bold;
-    margin-bottom: 30px;
-    font-size: 3.75rem;    
+  color: white;
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-size: 3.75rem;
 }
 
 .jumbotron-paragraph {
-    color: #fafafa;
-    font-weight: bold;
-    font-size: 	1.25rem;
-    margin-bottom: 10%;
+  color: #fafafa;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 10%;
 }
 
 .jumbotron-buttons {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 /*About Us section*/
 
-.container-wrapper {}
+.container-wrapper {
+}
 
 .about-us-container {
-    background-color: #e4f1f5;
-    color: #05124e;
-    min-height: 150px;
-    padding: 30px 20px;
+  background-color: #e4f1f5;
+  color: #05124e;
+  min-height: 150px;
+  padding: 30px 20px;
 }
 
 .about-us-img {
-    width: 500px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    position: relative;
+  width: 500px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
 }
 
 .about-us-p {
-    font-size: 	1.25rem;
-    text-align: justify;
-    padding-top: 15px;
+  font-size: 1.25rem;
+  text-align: justify;
+  padding-top: 15px;
 }
 
 .about-us-block-divider {
-    width: 75%;
-    height: 3px;
-    border: 0;
-    background-color: #ca5a12;
+  width: 75%;
+  height: 3px;
+  border: 0;
+  background-color: #ca5a12;
 }
 
 /* Information about COVID-19 Section */
 
 #info-covid-19-container {
-    background-color: #b0c6e4;
-    min-height: 150px;
-    color: #06358c;
+  background-color: #b0c6e4;
+  min-height: 150px;
+  color: #06358c;
 }
 
 #info-covid-19-container h4 {
-    text-align: center;
-    font-size: 1.875rem;
-    padding-top: 3%;
+  text-align: center;
+  font-size: 1.875rem;
+  padding-top: 3%;
 }
 
 #info-covid-19-container h4 i {
-    padding-right: 15px;
-    padding-top: 3%;
+  padding-right: 15px;
+  padding-top: 3%;
 }
 
 #info-covid-19-container a {
-    width: 250px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+  width: 250px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .info-img-covid-19 {
-    width: 300px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    position: relative; 
-    margin-top: 5%;
-    margin-bottom: 5%;
+  width: 300px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 /*--------------------------------------------End Page*/
@@ -164,96 +165,97 @@ body, html {
 /*--------------------------------------------Analytics Page*/
 
 .sub-title-color {
-    background-color: #a8b9bd;
-    min-height: 80px;
+  background-color: #a8b9bd;
+  min-height: 80px;
 }
 
 .title-container {
-    padding-top: 15px;
-    color: #6c757d;
+  padding-top: 15px;
+  color: #6c757d;
 }
 
 .sub-title-container {
-    text-align: center;
-    text-transform: uppercase;
-    padding-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 20px;
 }
 
 .block-container-divider {
-    height: 3px;
-    margin-top: 25px;
-    background-color: #c8ccd2;
+  height: 3px;
+  margin-top: 25px;
+  background-color: #c8ccd2;
 }
 
 .info-container {
-    padding-top: 15%;
-    padding-bottom: 15%;
+  padding-top: 15%;
+  padding-bottom: 15%;
 }
 
 .info-title {
-    text-align: center;
-    font-size: 1.875rem;
-    color: #5a7171;
+  text-align: center;
+  font-size: 1.875rem;
+  color: #5a7171;
 }
 
 .info-quantity {
-    text-align: center;
-    font-size: 2.8125rem;
-    font-weight: bold;
+  text-align: center;
+  font-size: 2.8125rem;
+  font-weight: bold;
 }
 
 .margin-container {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 #inputFrom > input,
 #inputTo > input {
-    margin-top: 10px;
-    width: 200px;
+  margin-top: 10px;
+  width: 200px;
 }
 
 #inputFrom2 > input,
 #inputTo2 > input {
-    margin-top: 10px;
-    width: 200px;
+  margin-top: 10px;
+  width: 200px;
 }
 
 .countryDropDown {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
-.country-select.inside input, .country-select.inside input[type=text]{
-    width: 200px;
+.country-select.inside input,
+.country-select.inside input[type="text"] {
+  width: 200px;
 }
 
 .countryCheckBock {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 #country1-cases,
 #country1-deaths,
 #country1-recovered {
-    color: #c70c0c;
+  color: #c70c0c;
 }
 
 #country2-cases,
 #country2-deaths,
 #country2-recovered {
-    color: #112758;
+  color: #112758;
 }
 
 /* ----------------------------------------Datepicker */
 
 .datepicker-container {
-    text-align: center;
-    font-weight: bold;
-    min-height: 60px;
-    padding-top: 15px;
+  text-align: center;
+  font-weight: bold;
+  min-height: 60px;
+  padding-top: 15px;
 }
 
 /* ----------------------------------------Charts */
 
-#total-world-cases-chart, 
+#total-world-cases-chart,
 #total-world-deaths-chart,
 #total-world-recovered-chart,
 #total-cases-country-chart,
@@ -262,8 +264,8 @@ body, html {
 #comparison-by-country-cases-chart,
 #comparison-by-country-deaths-chart,
 #comparison-by-country-recovered-chart {
-    width:600px;
-    height:400px;
+  width: 600px;
+  height: 400px;
 }
 
 /*--------------------------------------------COVID-19 Information Page*/
@@ -271,112 +273,111 @@ body, html {
 /* What you need to know Section */
 
 .description-page {
-    font-size: 1.4375rem;
-    text-align: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 20px;
+  font-size: 1.4375rem;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
 }
 
-#covid-19-general-info{
-    background-color: #d2aef3;
-    min-height: 150px;
-    color: #340750;
-    padding-bottom: 30px
+#covid-19-general-info {
+  background-color: #d2aef3;
+  min-height: 150px;
+  color: #340750;
+  padding-bottom: 30px;
 }
 
 .covid-img-general-info {
-    padding: 30px 15px;
-    margin-top: 3%;
+  padding: 30px 15px;
+  margin-top: 3%;
 }
 
 #covid-19-general-info h3,
 #about-coronaviruses-section h3,
 #protect-from-coronavirus-section h3 {
-    padding-top: 30px;
-    text-align: center;
+  padding-top: 30px;
+  text-align: center;
 }
 
 #covid-19-general-info h3 i,
 #about-coronaviruses-section h3 i,
 #protect-from-coronavirus-section h3 i {
-    padding-right: 10px;
+  padding-right: 10px;
 }
 
 #covid-19-general-info ul li,
 #protect-from-coronavirus-section ul li {
-    padding-top: 10px;
-    font-size: 1.25rem;
-    text-align: justify;
-    padding-right: 15px;
+  padding-top: 10px;
+  font-size: 1.25rem;
+  text-align: justify;
+  padding-right: 15px;
 }
 
 #covid-19-general-info p,
 #protect-from-coronavirus-section p {
-    padding: 15px 10px;
-    font-size: 1.125rem;
-    text-align: center;
+  padding: 15px 10px;
+  font-size: 1.125rem;
+  text-align: center;
 }
 
 #covid-19-general-info p a {
-    color: #e00808;
+  color: #e00808;
 }
 
 #covid-19-general-info p a:hover {
-    color: #fafafa;
-    text-decoration: none;
+  color: #fafafa;
+  text-decoration: none;
 }
 
 /* About Coronaviruses Section */
 
 #about-coronaviruses-section {
-    background-color: #38849c;
-    min-height: 150px;
-    color: #fafafa;
-    padding-bottom: 30px
+  background-color: #38849c;
+  min-height: 150px;
+  color: #fafafa;
+  padding-bottom: 30px;
 }
 
 .covid-img-coronaviruses {
-    padding: 30px 15px;
-    margin-top: 3%;
-    display: block;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
+  padding: 30px 15px;
+  margin-top: 3%;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #about-coronaviruses-section p {
-    padding: 10px 15px;
-    font-size: 1.25rem;
-    text-align: justify;
-    
+  padding: 10px 15px;
+  font-size: 1.25rem;
+  text-align: justify;
 }
 
 /* Protect yourself and other from coronavirus Section */
 
 #protect-from-coronavirus-section {
-    background-color: #1e9a87;
-    min-height: 150px;
-    color: #ffffff;
-    padding-bottom: 30px
+  background-color: #1e9a87;
+  min-height: 150px;
+  color: #ffffff;
+  padding-bottom: 30px;
 }
 
 .covid-img-protect-other {
-    padding: 30px 15px;
-    margin-top: 10%;
-    display: block;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
+  padding: 30px 15px;
+  margin-top: 10%;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #protect-from-coronavirus-section p a {
-    color: #070071;
+  color: #070071;
 }
 
 #protect-from-coronavirus-section p a:hover {
-    color: #a90000;
-    text-decoration: none;
+  color: #a90000;
+  text-decoration: none;
 }
 
 /* ----------------------------------------End Page */
@@ -384,148 +385,148 @@ body, html {
 /* ----------------------------------------Contact Us page */
 
 #contact-form-container {
-    padding: 40px 30px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+  padding: 40px 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
- 
+
 #contact-form-container form button {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .modal-body {
-    font-size: 1.25rem;
-    text-align: center;
+  font-size: 1.25rem;
+  text-align: center;
 }
 
 /* ----------------------------------------End */
 
 /* ----------------------------------------Footer */
 footer {
-    color: #fafafa;
-    min-height: 50px;
+  color: #fafafa;
+  min-height: 50px;
 }
 
 footer p {
-   text-align: center;
-   padding-top: 10px;
+  text-align: center;
+  padding-top: 10px;
 }
 
 /* ----------------------------------------Media Queries */
 
 @media screen and (max-width: 760px) {
-    h1.jumbotron-header {
-        font-size: 	3.125rem;
-    }
+  h1.jumbotron-header {
+    font-size: 3.125rem;
   }
+}
 
- @media screen and (max-width: 760px) {
-    p.jumbotron-paragraph {
-        font-size: 1.25rem;
-        margin: 8%;
-    }
+@media screen and (max-width: 760px) {
+  p.jumbotron-paragraph {
+    font-size: 1.25rem;
+    margin: 8%;
   }
+}
 
-  @media (min-width: 990px) and (max-width: 1270px) {
-    .info-img-covid-19 {
-        margin-top: 15%;
-    }
+@media (min-width: 990px) and (max-width: 1270px) {
+  .info-img-covid-19 {
+    margin-top: 15%;
   }
+}
 
-  @media (min-width: 1200px) and (max-width: 3760px) {
-    #total-world-cases-chart, 
-    #total-world-deaths-chart,
-    #total-world-recovered-chart,
-    #total-cases-country-chart,
-    #total-country-deaths-chart,
-    #total-country-recovered-chart,
-    #comparison-by-country-cases-chart,
-    #comparison-by-country-deaths-chart,
-    #comparison-by-country-recovered-chart  {
-        margin-left: 8%;
-    }
- }
-    
-  @media screen and (max-width: 750px) {
-    #total-world-cases-chart,
-    #total-world-deaths-chart,
-    #total-world-recovered-chart,
-    #total-cases-country-chart,
-    #total-country-deaths-chart,
-    #total-country-recovered-chart,
-    #comparison-by-country-cases-chart,
-    #comparison-by-country-deaths-chart,
-    #comparison-by-country-recovered-chart  {
-        width: 500px;
-        height: 350px;
-        margin-left: 0;
-    }
+@media (min-width: 1200px) and (max-width: 3760px) {
+  #total-world-cases-chart,
+  #total-world-deaths-chart,
+  #total-world-recovered-chart,
+  #total-cases-country-chart,
+  #total-country-deaths-chart,
+  #total-country-recovered-chart,
+  #comparison-by-country-cases-chart,
+  #comparison-by-country-deaths-chart,
+  #comparison-by-country-recovered-chart {
+    margin-left: 8%;
   }
+}
 
-  @media screen and (max-width: 480px) {
-    #total-world-cases-chart,
-    #total-world-deaths-chart,
-    #total-world-recovered-chart,
-    #total-cases-country-chart,
-    #total-country-deaths-chart,
-    #total-country-recovered-chart,
-    #comparison-by-country-cases-chart,
-    #comparison-by-country-deaths-chart,
-    #comparison-by-country-recovered-chart  {
-        width: 380px;
-        height: 300px;
-        margin-left: 0;
-    }
+@media screen and (max-width: 750px) {
+  #total-world-cases-chart,
+  #total-world-deaths-chart,
+  #total-world-recovered-chart,
+  #total-cases-country-chart,
+  #total-country-deaths-chart,
+  #total-country-recovered-chart,
+  #comparison-by-country-cases-chart,
+  #comparison-by-country-deaths-chart,
+  #comparison-by-country-recovered-chart {
+    width: 500px;
+    height: 350px;
+    margin-left: 0;
   }
+}
 
-  @media screen and (max-width: 400px) {
-    #total-world-cases-chart,
-    #total-world-deaths-chart,
-    #total-world-recovered-chart,
-    #total-cases-country-chart,
-    #total-country-deaths-chart,
-    #total-country-recovered-chart,
-    #comparison-by-country-cases-chart,
-    #comparison-by-country-deaths-chart,
-    #comparison-by-country-recovered-chart  {
-        width: 350px;
-        height: 250px;
-        margin-left: 0;
-    }
+@media screen and (max-width: 480px) {
+  #total-world-cases-chart,
+  #total-world-deaths-chart,
+  #total-world-recovered-chart,
+  #total-cases-country-chart,
+  #total-country-deaths-chart,
+  #total-country-recovered-chart,
+  #comparison-by-country-cases-chart,
+  #comparison-by-country-deaths-chart,
+  #comparison-by-country-recovered-chart {
+    width: 380px;
+    height: 300px;
+    margin-left: 0;
   }
+}
 
-  @media (min-width: 1280px)and (max-width: 1680px) {
-    .covid-img-general-info {
-        margin-top: 30%;
-    }
+@media screen and (max-width: 400px) {
+  #total-world-cases-chart,
+  #total-world-deaths-chart,
+  #total-world-recovered-chart,
+  #total-cases-country-chart,
+  #total-country-deaths-chart,
+  #total-country-recovered-chart,
+  #comparison-by-country-cases-chart,
+  #comparison-by-country-deaths-chart,
+  #comparison-by-country-recovered-chart {
+    width: 350px;
+    height: 250px;
+    margin-left: 0;
   }
+}
 
-  @media (min-width: 1280px)and (max-width: 1680px) {
-    .covid-img-coronaviruses {
-        margin-top: 15%;
-    }
+@media (min-width: 1280px) and (max-width: 1680px) {
+  .covid-img-general-info {
+    margin-top: 30%;
   }
+}
 
-  @media (min-width: 1280px)and (max-width: 1680px) {
-    .covid-img-protect-other {
-        margin-top: 35%;
-    }
+@media (min-width: 1280px) and (max-width: 1680px) {
+  .covid-img-coronaviruses {
+    margin-top: 15%;
   }
+}
 
-  @media (min-width: 990px) and (max-width: 1270px) {
-    .covid-img-general-info {
-        margin-top: 50%;
-    }
+@media (min-width: 1280px) and (max-width: 1680px) {
+  .covid-img-protect-other {
+    margin-top: 35%;
   }
+}
 
-  @media (min-width: 990px) and (max-width: 1270px) {
-    .covid-img-coronaviruses {
-        margin-top: 30%;
-    }
+@media (min-width: 990px) and (max-width: 1270px) {
+  .covid-img-general-info {
+    margin-top: 50%;
   }
+}
 
-  @media (min-width: 990px) and (max-width: 1270px) {
-    .covid-img-protect-other {
-        margin-top: 50%;
-    }
+@media (min-width: 990px) and (max-width: 1270px) {
+  .covid-img-coronaviruses {
+    margin-top: 30%;
   }
+}
+
+@media (min-width: 990px) and (max-width: 1270px) {
+  .covid-img-protect-other {
+    margin-top: 50%;
+  }
+}

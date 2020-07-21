@@ -1,115 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="16x16">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="icon"
+      href="assets/images/favicon.png"
+      type="image/png"
+      sizes="16x16"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+      integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Coronavirus Report | Home</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-            <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark background-color-navbar-footer shadow">
-            <!-- Brand -->   
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/images/coronavirus_report_logo.png" width="150" height="40" alt="Coronavirus Report logo">
-             </a>
-             <!-- Toggler/collapsible Button / resource from https://www.w3schools.com/ -->
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false">
-            <span class="navbar-toggler-icon"></span></button>
-           
-            <!-- Navbar links -->
-            <div id="collapsibleNavbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav ml-auto menu-collapse-align">
-                    <li class="nav-item mr-2"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item mr-2"><a class="nav-link" href="analytics.html">Analytics</a></li>
-                    <li class="nav-item mr-2"><a class="nav-link" href="covid-19_information.html">COVID-19 Information</a></li>
-                    <li class="nav-item mr-2"><a class="nav-link" href="contact_us.html">Contact Us</a></li>
-                </ul>
-            </div>  
-        </nav>
-             <!-- End Navbar -->
-    </header>
-           
-            <!-- Welcome Image -->
+      <!-- Navbar -->
+      <nav
+        class="navbar navbar-expand-lg navbar-dark background-color-navbar-footer shadow"
+      >
+        <!-- Brand -->
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="assets/images/coronavirus_report_logo.png"
+            width="150"
+            height="40"
+            alt="Coronavirus Report logo"
+          />
+        </a>
+        <!-- Toggler/collapsible Button / resource from https://www.w3schools.com/ -->
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+          aria-controls="collapsibleNavbar"
+          aria-expanded="false"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-     <section class="container-fluid welcome-img-container">
-            <div class="opaque-overlay-img">&nbsp;</div>
-                <div class="row">
-                    <div class="col-12">
-                        <section class="jumbotron text-center">
-                            <h1 class="jumbotron-header">Welcome to Coronavirus Report</h1>
-                            <p class="jumbotron-paragraph">Follow COVID-­19 worlwide cases and predict these two weeks in advance</p>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-lg-4 col-xs-12">
-                                        <a role="button" href="analytics.html#globally-report" class="btn btn-info btn-lg btn-block jumbotron-buttons shadow" >View Globally Report</a>
-                                    </div> 
-                                    <div class="col-lg-4 col-xs-12">
-                                        <a role="button" href="analytics.html#report-by-country" class="btn btn-info btn-lg btn-block jumbotron-buttons shadow" >Report by Country</a>
-                                    </div> 
-                                    <div class="col-lg-4 col-xs-12">
-                                        <a role="button" href="analytics.html#comparison-by-country" class="btn btn-info btn-lg btn-block jumbotron-buttons shadow" >Comparison by Country</a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </section>
-                    </div>
+        <!-- Navbar links -->
+        <div id="collapsibleNavbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav ml-auto menu-collapse-align">
+            <li class="nav-item mr-2">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item mr-2">
+              <a class="nav-link" href="analytics.html">Analytics</a>
+            </li>
+            <li class="nav-item mr-2">
+              <a class="nav-link" href="covid-19_information.html"
+                >COVID-19 Information</a
+              >
+            </li>
+            <li class="nav-item mr-2">
+              <a class="nav-link" href="contact_us.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+    </header>
+
+    <!-- Welcome Image -->
+
+    <section class="container-fluid welcome-img-container">
+      <div class="opaque-overlay-img">&nbsp;</div>
+      <div class="row">
+        <div class="col-12">
+          <section class="jumbotron text-center">
+            <h1 class="jumbotron-header">Welcome to Coronavirus Report</h1>
+            <p class="jumbotron-paragraph">
+              Follow COVID-­19 worldwide cases and predict these two weeks in
+              advance
+            </p>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-4 col-xs-12">
+                  <a
+                    role="button"
+                    href="analytics.html#globally-report"
+                    class="btn btn-info btn-lg btn-block jumbotron-buttons shadow"
+                    >View Globally Report</a
+                  >
+                </div>
+                <div class="col-lg-4 col-xs-12">
+                  <a
+                    role="button"
+                    href="analytics.html#report-by-country"
+                    class="btn btn-info btn-lg btn-block jumbotron-buttons shadow"
+                    >Report by Country</a
+                  >
+                </div>
+                <div class="col-lg-4 col-xs-12">
+                  <a
+                    role="button"
+                    href="analytics.html#comparison-by-country"
+                    class="btn btn-info btn-lg btn-block jumbotron-buttons shadow"
+                    >Comparison by Country</a
+                  >
+                </div>
+              </div>
             </div>
+          </section>
+        </div>
+      </div>
     </section>
 
-            <!-- About Us -->
+    <!-- About Us -->
 
-     <section class="container-fluid container-wrapper about-us-container">
-            <div class="row">
-                <div class="col-lg-4 col-xs-12">
-                    <img src="assets/images/img_002.jpg" alt="About Us" class="img-fluid about-us-img shadow">
-                </div>
-                <div class="col-lg-8 col-xs-12">
-                    <h2 class="titles-style ">About Us</h2>
-                    <hr class="about-us-block-divider">
-                    <p class="about-us-p">
-                        Coronavirus Report is a website where you can follow COVID­-19 globally cases and
-                        at the same time you can review the cases of each country and compare their situation 
-                        with other countries. You can also predict the number of cases per country two weeks in advance.
-                    </p>
-                </div>
-         </div>
-     </section>
-
-            <!-- Information about COVID-19 Section -->
-
-     <section id="info-covid-19-container" class="container-fluid">
-        <div class="row">
-            <div class="col-lg-3 col-xs-12">
-                <img class="img-fluid info-img-covid-19 shadow" src="assets/images/img_006.jpg" alt="Learn about COVID-19">
-            </div>
-            <div class="col-lg-9 col-xs-12">
-                <h4><i class="fas fa-head-side-virus"></i>Learn more about COVID-19 and what you can do to stay safe and prevent spread of the virus.</h4>
-                <a role="button" href="covid-19_information.html" class="btn btn-primary btn-lg mx-auto d-block shadow" >More Information Here</a>
-            </div>
+    <section class="container-fluid container-wrapper about-us-container">
+      <div class="row">
+        <div class="col-lg-4 col-xs-12">
+          <img
+            src="assets/images/img_002.jpg"
+            alt="About Us"
+            class="img-fluid about-us-img shadow"
+          />
         </div>
-     </section>
+        <div class="col-lg-8 col-xs-12">
+          <h2 class="titles-style">About Us</h2>
+          <hr class="about-us-block-divider" />
+          <p class="about-us-p">
+            Coronavirus Report is a website where you can follow COVID­-19
+            globally cases and at the same time you can review the cases of each
+            country and compare their situation with other countries. You can
+            also predict the number of cases per country two weeks in advance.
+          </p>
+        </div>
+      </div>
+    </section>
 
+    <!-- Information about COVID-19 Section -->
 
-            <!-- Footer -->
-     <footer class="container-fluid background-color-navbar-footer">
-         <div class="row">
-             <div class="col-12">
-                 <p>Copyright © All Rights Reserved 2020</p>
-             </div>
-         </div>
-     </footer>
-            <!-- End Footer -->
+    <section id="info-covid-19-container" class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-xs-12">
+          <img
+            class="img-fluid info-img-covid-19 shadow"
+            src="assets/images/img_006.jpg"
+            alt="Learn about COVID-19"
+          />
+        </div>
+        <div class="col-lg-9 col-xs-12">
+          <h4>
+            <i class="fas fa-head-side-virus"></i>Learn more about COVID-19 and
+            what you can do to stay safe and prevent spread of the virus.
+          </h4>
+          <a
+            role="button"
+            href="covid-19_information.html"
+            class="btn btn-primary btn-lg mx-auto d-block shadow"
+            >More Information Here</a
+          >
+        </div>
+      </div>
+    </section>
 
-            
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Footer -->
+    <footer class="container-fluid background-color-navbar-footer">
+      <div class="row">
+        <div class="col-12">
+          <p>Copyright © All Rights Reserved 2020</p>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
 
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
