@@ -35,3 +35,29 @@ This test did not produce any error, it only shows 3 warnings.
 ### Manually testing on Analytics page
 
 ### Manually testing on Contact Us page
+
+The contact form was made responsive using the EmailJS service. In order to test that the contact form works properly, I did the following tests:
+
+ 1. I tried submitting the form without the **name**.
+
+![ScreenShot1](/assets/images/contact-form-test-1.png)
+
+2. I tried submitting the form without the **email**.
+
+![ScreenShot2](/assets/images/contact-form-test-2.png)
+
+3. I tried submitting the form without the **message**.
+
+![ScreenShot3](/assets/images/contact-form-test-3.png)
+
+As you can see, the contact form produced the correct error message as expected.
+
+The following test consisted of filling out the entire contact form and checking that the message was indeed sent.
+
+-  As you can see, the message was sent correctly, and a modal window appears with a message that warns us that the message was indeed sent.
+
+![ScreenShot4](/assets/images/contact-form-test-4.png)
+
+- In this screenshot, you can see that the message has indeed reached the email that has been used to receive the users' messages.
+
+![ScreenShot5](/assets/images/contact-form-test-5.png)

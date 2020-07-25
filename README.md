@@ -147,7 +147,7 @@ interest, then the user must select a date range using the datepicker, and once 
 This page contains useful information about this new coronavirus,and also has a cover image, page title and a brief description of the page. It is divided into 3 sections,
  and every section has an image.
 
-- **What you need to know:** This section shows a resume with relevant information the COVID-19.
+- **What you need to know:** This section shows a resume with relevant information of the COVID-19.
 
 - **About Coronaviruses:** This section shows summary information on what coronaviruses are.
 
@@ -221,7 +221,7 @@ In the future I would like to implement in **Comparison by Country section** the
 
 ## Testing
 
-Please view the complete testing process in this separate document <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/docs/assets/documentation/TESTING.md" target="_blank">here</a>.
+Please view the complete testing process in this separate document <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/documentation/TESTING.md" target="_blank">here</a>.
 
 ## Deployment
 
