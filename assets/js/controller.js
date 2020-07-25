@@ -16,13 +16,13 @@ $(document).ready(function () {
   // Country Dropdown for Comparison by Country
   $("#country1").countrySelect({
     defaultCountry: "ie",
-    preferredCountries: ["ie", "us", "ru"],
+    preferredCountries: ["ie", "gb", "us", "ru"],
     responsiveDropdown: true,
   });
 
   $("#country2").countrySelect({
     defaultCountry: "us",
-    preferredCountries: ["ie", "us", "ru"],
+    preferredCountries: ["ie", "gb", "us", "ru"],
     responsiveDropdown: true,
   });
 
@@ -158,9 +158,17 @@ function getCountryDatabyDate() {
       );
       document.getElementById(
         "total-country-recovered"
-      ).innerHTML = numberWithCommas(countryRecoveredArray.reverse()[0]);
+      ).innerHTML = numberWithCommas(checkValidData(countryRecoveredArray.reverse()[0]));
     },
   });
+}
+
+function checkValidData(recoveredData) {
+  if (typeof recoveredData == "object" ){
+    return "No Data"
+  } else {
+    return  recoveredData
+  }
 }
 
 // Read both code countries and dates as a params to do the request
@@ -197,14 +205,14 @@ function renderComparisonByCountriesChart() {
       document.getElementById("country2-deaths").innerHTML = "";
       document.getElementById("country2-recovered").innerHTML = "";
     },
-    statusCode: {
-      404: function () {
-        alert("API not found");
-      },
-      400: function () {
-        alert("Invalid date");
-      },
-    },
+    // statusCode: {
+    //   404: function () {
+    //     alert("API not found");
+    //   },
+    //   400: function () {
+    //     alert("Invalid date");
+    //   },
+    // },
     success: function (dataFirstCountry) {
       $.ajax({
         url:
@@ -385,4 +393,26 @@ function getArrayFromJSONbyKey(data, key, splitdate) {
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+// Scroll back to top button
+// Example from w3schools.com
+
+//Get the button
+var myButton = document.getElementById("scrollTopBtn");
+// When the user scrolls down 80px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    myButton.style.display = "block";
+  } else {
+    myButton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }

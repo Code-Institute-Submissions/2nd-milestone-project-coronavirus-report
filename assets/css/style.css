@@ -401,6 +401,29 @@ html {
 
 /* ----------------------------------------End */
 
+/* ----------------------------------------Scroll button */
+
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 5px;
+  z-index: 99;
+  font-size: 30px;
+  border: none;
+  outline: none;
+  background-color: #fd7000;
+  color: white;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 50%;
+}
+
+#scrollTopBtn:hover {
+  background-color: #afadac;
+}
+
 /* ----------------------------------------Footer */
 footer {
   color: #fafafa;

@@ -44,7 +44,7 @@ The contact form was made responsive using the EmailJS service. In order to test
 
 2. I tried submitting the form without the **email**.
 
-![ScreenShot2](/assets/images/contact-form-test-2.png)
+![ScreenShot2](/assets/images/contact-form-test-2.PNG)
 
 3. I tried submitting the form without the **message**.
 
