@@ -32,6 +32,15 @@ This test did not produce any error, it only shows 3 warnings.
 
 ### Manually testing the functionality of the links
 
+The following test were made to check that all links responded as they should:
+
+- Menu bar items were clicked on from each page to make sure that they navigate to the correct page and that they are correctly shown as 'active' when selected.
+- Clicking on the logo in the menu bar leads the user back to the home page.
+- All buttons were clicked on to check that they take the user to the correct page.
+- The World Health Organization links contained in the COVID-19 Information page were checked to ensure that they led to the corresponding page.
+- The contact form *"Send Message"* button only accepts the form when it has completed with all required fields filled in. After that, the *Send Message* button opens a modal window with a successful message as expected. 
+- The *scroll back to top* button in the Analytics page works properly.
+
 ### Manually testing on Analytics page
 
 ### Manually testing on Contact Us page
