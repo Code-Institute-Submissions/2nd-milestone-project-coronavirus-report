@@ -264,7 +264,7 @@ html {
 #comparison-by-country-cases-chart,
 #comparison-by-country-deaths-chart,
 #comparison-by-country-recovered-chart {
-  width: 600px;
+  width: 100%;
   height: 400px;
 }
 
@@ -480,7 +480,7 @@ footer p {
   #comparison-by-country-cases-chart,
   #comparison-by-country-deaths-chart,
   #comparison-by-country-recovered-chart {
-    width: 500px;
+    width: 100%;
     height: 350px;
     margin-left: 0;
   }
@@ -496,7 +496,7 @@ footer p {
   #comparison-by-country-cases-chart,
   #comparison-by-country-deaths-chart,
   #comparison-by-country-recovered-chart {
-    width: 380px;
+    width: 100%;
     height: 300px;
     margin-left: 0;
   }
@@ -512,7 +512,7 @@ footer p {
   #comparison-by-country-cases-chart,
   #comparison-by-country-deaths-chart,
   #comparison-by-country-recovered-chart {
-    width: 350px;
+    width: 100%;
     height: 250px;
     margin-left: 0;
   }

@@ -517,7 +517,7 @@ function optionComparisonCases(
     },
     grid: {
       left: "3%",
-      right: "16%",
+      right: "12%",
       bottom: "3%",
       containLabel: true,
     },
@@ -584,7 +584,7 @@ function optionComparisonDeaths(
     },
     grid: {
       left: "3%",
-      right: "16%",
+      right: "12%",
       bottom: "3%",
       containLabel: true,
     },
@@ -651,7 +651,7 @@ function optionComparisonRecovered(
     },
     grid: {
       left: "3%",
-      right: "16%",
+      right: "12%",
       bottom: "3%",
       containLabel: true,
     },
@@ -686,3 +686,60 @@ function optionComparisonRecovered(
     ],
   };
 }
+
+// To resize the charts and add responsiveness
+// Solution from StackOverflow
+
+$(window).on('resize', function(){
+  if(chartWorldCases != null && chartWorldCases != undefined){
+    chartWorldCases.resize();
+  }
+});
+
+$(window).on('resize', function(){
+  if(chartDeaths != null && chartDeaths != undefined){
+    chartDeaths.resize();
+  }
+});
+
+$(window).on('resize', function(){
+  if(chartRecovered != null && chartRecovered != undefined){
+    chartRecovered.resize();
+  }
+});
+
+$(window).on('resize', function(){
+  if(chartCountryCases != null && chartCountryCases != undefined){
+    chartCountryCases.resize();
+  }
+});
+
+$(window).on('resize', function(){
+  if(chartCountryDeaths != null && chartCountryDeaths != undefined){
+    chartCountryDeaths.resize();
+  }
+});
+
+$(window).on('resize', function(){
+  if(chartCountryRecovered != null && chartCountryRecovered != undefined){
+    chartCountryRecovered.resize();
+  }
+});
+
+$(window).on('resize', function(){
+  if(chartComparisonCases != null && chartComparisonCases != undefined){
+    chartComparisonCases.resize();
+  }
+});
+
+$(window).on('resize', function(){
+  if(chartComparisonDeaths != null && chartComparisonDeaths != undefined){
+    chartComparisonDeaths.resize();
+  }
+});
+
+$(window).on('resize', function(){
+  if(chartComparisonRecovered != null && chartComparisonRecovered != undefined){
+    chartComparisonRecovered.resize();
+  }
+});
