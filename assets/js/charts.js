@@ -373,8 +373,7 @@ function optionCountryCases(
     },
     grid: {
       left: "19.5%",
-      height: "auto",
-      width: "auto",
+      right: "12%"
     },
     xAxis: {
       type: "category",
