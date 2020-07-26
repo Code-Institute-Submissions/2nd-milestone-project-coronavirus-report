@@ -390,6 +390,13 @@ html {
   margin-bottom: 30px;
 }
 
+#contact-form-container h2 {
+  text-align: center;
+  color: #2f3e48;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+
 #contact-form-container form button {
   text-transform: uppercase;
 }
@@ -409,7 +416,7 @@ html {
   bottom: 20px;
   right: 5px;
   z-index: 99;
-  font-size: 30px;
+  font-size: 1.875rem;
   border: none;
   outline: none;
   background-color: #fd7000;
