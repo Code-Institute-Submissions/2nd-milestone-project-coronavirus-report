@@ -21,10 +21,44 @@ In order for the written code to meet all requirements, the following tests were
 
 #### HTML
 
+My HTML code was passed through the <a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a>. 
+
+1. **Home Page *(index.html)***: This test did not produce any error, it only shows 2 warnings.
+
+![ScreenShot1](/assets/images/home-page-test.PNG)
+
+2. **Analytics Page *(analytics.html)***: The validator brought up some warnings that explained that it had several empty items on this page. However, this is done intentionally, as the content of these elements is added with JavaScript once the chart is loaded. 
+
+![ScreenShot2](/assets/images/analytics-page-test.PNG)
+
+3. **COVID-19 Information Page *(covid-19_information.html)***: This file passed without any errors or warnings.
+
+![ScreenShot3](/assets/images/covid-info-test.PNG)
+
+4. **Contact Us Page *(contact_us.html)***: It passed the test, but it shown me that I did not need a `type="text/javascript"` in my script tag. However, as it was for EmailJS and copied directly from the service's instructions, I decided to keep it in as it was. And also, I added a title inside of my contact form in order to pass the test.
+
+![ScreenShot4](/assets/images/contact-page-test.PNG)
+
 #### CSS
 
 I checked my CSS code with the <a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C Markup Validation Service</a>. 
 This test did not produce any error, it only shows 3 warnings.
+
+![ScreenShot1](/assets/images/style-css-test.PNG)
+![ScreenShot2](/assets/images/style-css-test2.PNG)
+
+#### JavaScript
+
+I used <a href="https://jshint.com/" target="_blank">JSHint</a> to check my JavaScript files.
+
+1. **controller.js**:
+2. **charts.js**: This file passed without any errors, just I had 21 warnings about the same extension.
+
+![ScreenShot2](/assets/images/charts-js-test.PNG)
+
+3. **sendEmail.js**: This file passed without any errors.
+
+![ScreenShot3](/assets/images/sendEmail-js-test.PNG)
 
 ### Compatibility with different browsers
 
