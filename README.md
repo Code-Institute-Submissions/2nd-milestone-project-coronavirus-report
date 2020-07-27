@@ -78,17 +78,17 @@ of cases. The third shows the same data as the first one, only with the differen
 
 4. **Skeleton:**
   - Home page wireframe.
-    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/images/home_page_desktop.png" target="_blank">Desktop</a>
-    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/images/home_page_mobile.png" target="_blank">Mobile phone</a>
+    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/wireframes/home_page_desktop.png" target="_blank">Desktop</a>
+    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/wireframes/home_page_mobile.png" target="_blank">Mobile phone</a>
   - Analytics page page wireframe.
-    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/images/analytics_desktop.png" target="_blank">Desktop</a>
-    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/images/analytics_page_mobile.png" target="_blank">Mobile phone</a>
+    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/wireframes/analytics_desktop.png" target="_blank">Desktop</a>
+    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/wireframes/analytics_page_mobile.png" target="_blank">Mobile phone</a>
   - COVID-19 Information page wireframe.
-    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/images/covidinfopagedesktop.png" target="_blank">Desktop</a>
-    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/images/covid19_information_page_mobile.png" target="_blank">Mobile phone</a>
+    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/wireframes/covidinfopagedesktop.png" target="_blank">Desktop</a>
+    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/wireframes/covid19_information_page_mobile.png" target="_blank">Mobile phone</a>
   - Contact Us page wireframe.
-    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/images/contact_us_page_desktop.png" target="_blank">Desktop</a>
-    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/images/contact_us_page_mobile_.png" target="_blank">Mobile phone</a>
+    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/wireframes/contact_us_page_desktop.png" target="_blank">Desktop</a>
+    - <a href="https://github.com/cotebarrientos/2nd-milestone-project-coronavirus-report/blob/master/assets/wireframes/contact_us_page_mobile_.png" target="_blank">Mobile phone</a>
 
 5. **Surface:** In general, blue tones were chosen for the navigation bar and footer, as it is a pleasant colour to look at. The font used
  for the website was the default Bootstrap, and a simple and practical design was chosen, making use of a hero image on the Home page and 
