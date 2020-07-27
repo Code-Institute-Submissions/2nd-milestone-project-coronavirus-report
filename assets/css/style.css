@@ -560,3 +560,13 @@ footer p {
     margin-top: 50%;
   }
 }
+
+@media (min-width: 375px) and (max-width: 1270px) {
+  #inputFrom > input,
+  #inputTo > input,
+  #inputFrom2 > input,
+  #inputTo2 > input {
+    margin-top: 10px;
+    width: 150px;
+  }
+}
