@@ -62,6 +62,13 @@ I used <a href="https://jshint.com/" target="_blank">JSHint</a> to check my Java
 
 ### Compatibility with different browsers
 
+In order to ensure that the website would work properly in the following browsers, responsiveness tests, button and link checks were done, as well as tests on the look of the website to ensure that the colors, images and fonts used would display correctly.
+
+- Mozilla Firefox
+- Google Chrome
+- Microsoft Edge
+- Apple Safari
+
 ### Responsiveness in different screen sizes
 
 ### Manually testing the functionality of the links
