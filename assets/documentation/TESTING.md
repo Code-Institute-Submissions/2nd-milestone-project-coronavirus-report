@@ -12,18 +12,18 @@ The testing process is outlined below. It includes:
 - Testing website compatibility on different browsers.
 - Testing responsiveness in different screen sizes.
 - Manually testing the functionality of the links.
-- Manually testing on Analytics page, checking all the charts renders in properly way.
+- Manually testing on Analytics page, checking that all the charts render in a proper way.
 - Manually testing on Contact Us page, checking the contact form is working correctly.
 
 ### Validating HTML, CSS and Javascript code.
 
-In order for the written code to meet all requirements, the following tests were performed.
+In order for the code to meet all requirements, the following tests were performed.
 
 #### HTML
 
-My HTML code was passed through the <a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a>. 
+My HTML code has passed through the <a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a>. 
 
-1. **Home Page *(index.html)***: This test did not produce any error, it only shows 2 warnings.
+1. **Home Page *(index.html)***: This test did not produce any error, it only show 2 warnings.
 
 ![ScreenShot1](/assets/testing-img/home-page-test.PNG)
 
@@ -109,6 +109,104 @@ The following test were made to check that all links responded as they should:
 - The *scroll back to top* button in the Analytics page works properly.
 
 ### Manually testing on Analytics page
+
+The Analytics page is the most important part of the whole website, because here you will find all the interactivity (using Javascript). This page consists of 3 sections in which each one displays 3 charts related to the number of cases by COVID-19, as well as the deaths and recoveries by this disease, therefore it was very important to make different tests here, because if this part fails, it means the total failure of the project. To make sure that everything worked properly, the following tests were performed:
+
+#### 1. When the Analytics page is loaded.
+
+- When loading the page in the **Globally Report section**, it should load the 3 charts showing 7-day information, since the *datepickers* have a default range of 1 week.
+
+![ScreenShot1](/assets/testing-img/analytics-001.jpg)
+
+**Result: test passed**
+
+- When loading the page in the **Report by Country section**, it should load 3 charts, showing 7 day information for Ireland (default country in the dropdown), since the datepickers have a range of 1 week by default.
+
+![ScreenShot2](/assets/testing-img/analytics-002.jpg)
+
+**Result: test passed**
+
+- When loading the page in the **Comparison by Country section**, it should load 3 charts, showing 7 day information for Ireland and USA (default countries in the dropdowns), since the datepickers have a range of 1 week by default.
+
+![ScreenShot3](/assets/testing-img/analytics-003.jpg)
+
+**Result: test passed**
+
+#### 2. Globally Report tests.
+
+- In the Globally Report section, I selected the datepicker for "From" and changed it to January 22nd The expected behavior is that the charts will change along with the change made.
+
+![ScreenShot4](/assets/testing-img/analytics-004.jpg)
+
+**Result: test passed**
+
+- In the Globally Report section, I selected both datepickers for "From" I changed it to January 22nd and for "Until" I changed it to February 22nd. The expected behavior is that the charts will change along with the change made.
+
+![ScreenShot5](/assets/testing-img/analytics-007.jpg)
+
+**Result: test passed**
+
+- The tooltip inside each chart has to show information about the day and the data consulted.
+
+![ScreenShot6](/assets/testing-img/analytics-tooltip.jpg)
+
+**Result: test passed**
+
+#### 3. Report by Country tests.
+
+- In the Report by Country section, I selected the checkbox of "Projected", the expected behavior is this checkbox has to display 2 weeks of projected cases on cases chart.
+
+![ScreenShot7](/assets/testing-img/analytics-005.jpg)
+
+**Result: test passed**
+
+- In the Report by Country section, I selected a country from the country dropdown (Chile), and then I selected the datepicker for "From" and changed it to June 1st. The expected behavior is that the charts will change along with the change made.
+
+![ScreenShot8](/assets/testing-img/analytics-008.jpg)
+
+**Result: test passed**
+
+- The tooltip inside each chart has to show information about the day and the data consulted.
+
+![ScreenShot9](/assets/testing-img/charts-tooltip.jpg)
+
+**Result: test passed**
+
+- In different tests, I discovered that the API I used to query the country information, did not contain data about the coronavirus recovered for UK, therefore it could not load information into the chart and at the same time it showed me a string that said "[object Object"]. This didn't look good so I opted to fix this by creating a function to prevent that.
+
+As you can see here, this is what it looked like **before** the changes were made.
+
+![ScreenShot10](/assets/testing-img/noData.png) 
+
+As you can see in this image, so you can see now the problem described above, totally solved.
+
+![ScreenShot11](/assets/testing-img/analytics-010.jpg)
+
+This is the function used to prevent the problem.
+
+![ScreenShot12](/assets/testing-img/function-noData.PNG)
+
+#### 3. Comparison by Country tests.
+
+- In the Comparison by Country section, I selected 2 countries from the country dropdown (Argentina and Chile), and then I selected the datepicker for "From" and changed it to June 1st. The expected behavior is that the charts will change along with the change made.
+
+![ScreenShot13](/assets/testing-img/analytics-006.jpg)
+
+**Result: test passed**
+
+- The tooltip within each chart has to show information about the two selected countries, the date chosen and the data consulted.
+
+![ScreenShot14](/assets/testing-img/comparison-countries-tooltip.jpg)
+
+**Result: test passed**
+
+- In the Comparison by Country section, I selected 2 countries from the country dropdown (China and Brazil), and then I selected the datepicker for "From" and changed it to March 1st and for "Until" I changed it to July 1st. The expected behavior is that the charts will change along with the change made.
+
+![ScreenShot15](/assets/testing-img/analytics-009.jpg)
+
+*Note*: The charts show the information consulted for both countries, only for the chosen date range (more than one month) it takes a little longer to render the data.
+
+**Result: test passed**
 
 ### Manually testing on Contact Us page
 
