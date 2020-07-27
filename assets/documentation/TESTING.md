@@ -51,7 +51,10 @@ This test did not produce any error, it only shows 3 warnings.
 
 I used <a href="https://jshint.com/" target="_blank">JSHint</a> to check my JavaScript files.
 
-1. **controller.js**:
+1. **controller.js**: This file passed without any errors, just I had 7 warnings about the same extension and 2 warnings about the if (?) shortcut.
+
+![ScreenShot2](/assets/testing-img/controller-js-test.PNG)
+
 2. **charts.js**: This file passed without any errors, just I had 21 warnings about the same extension.
 
 ![ScreenShot2](/assets/testing-img/charts-js-test.PNG)
@@ -70,6 +73,29 @@ In order to ensure that the website would work properly in the following browser
 - Apple Safari
 
 ### Responsiveness in different screen sizes
+
+I have made the following response tests in order to ensure that the website operates correctly and at the same time that its components are seen harmoniously arranged in different screen sizes, so that I used the following tools to help me.
+
+- **Responsinator**: This website was used to simulate different screen sizes of mobile devices. This was really useful, because it showed in real time the aspect of the tested website, helping to discover different responsiveness problems.
+
+Here as you can see, there are some screenshots of how the website looks in different screen sizes.
+
+![ScreenShot1](/assets/testing-img/android-1.jpg)
+![ScreenShot2](/assets/testing-img/android-2.jpg)
+![ScreenShot3](/assets/testing-img/iphone-1.jpg)
+![ScreenShot4](/assets/testing-img/iphone-2.jpg)
+![ScreenShot5](/assets/testing-img/tablet-1.jpg)
+![ScreenShot6](/assets/testing-img/tablet-2.jpg)
+
+- **Mozilla Firefox**: This browser was used to check the behavior of the web page in different screen sizes using the Developer Tools. Tests consisted in testing the appearance of the fonts used, the aspect of colors and backgrounds, the order and space used by the different elements that make up the web page, and also the behavior of the charts.
+
+- **Google Chrome**: This browser was used to check the behavior of the web page in different screen sizes using the Developer Tools. As in the previous browser, different tests were performed checking the aspect of the font used, colors and backgrounds, behavior of the charts, and finally, the space used by the elements of the website. In addition, a contrast was made between both browsers, checking for any existing differences.
+
+- **Xiaomi Mi A1**: This mobile device was used to test the behavior of the website, using browsers such as Chrome, Mozilla Firefox and DuckDuckGo. At the beginning of the project, the website had many problems on this device, for example, the charts did not adapt well when rotating the screen, as they kept the first size loaded, despite having created different media queries. The solution for this problem was to create a function that would execute this task, and this was done for each chart.
+
+![ScreenShot7](/assets/testing-img/solution-responsiveness-charts.PNG)
+
+After all these tests, the website has approved all the performed tests.
 
 ### Manually testing the functionality of the links
 
