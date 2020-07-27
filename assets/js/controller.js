@@ -125,18 +125,19 @@ function getCountryDatabyDate() {
         '<img src="assets/images/loading.gif" alt="Loading" width="128" height="128">';
     },
     complete: function () {},
-    // statusCode: {
-    //   404: function () {
-    //     alert("API not found");
-    //   },
-    //   400: function () {
-    //     alert("Invalid date");
-    //   },
-    // },
+    statusCode: {
+      404: function () {
+        console.warn("API not found");
+      },
+      400: function () {
+        console.warn("Invalid date");
+      },
+    },
     success: function (data) {
-      typeof data == "string"
-        ? (data = JSON.parse(data))
-        : console.log("No need to convert into JSON");
+      if (data == "Invalid date format. Date format should be YYYY-MM-DD")
+        return
+      if (typeof data == "string")
+        data = JSON.parse(data)
       countryDateArray = getArrayFromJSONbyKey(data, "last_updated", true);
       countryCasesArray = getArrayFromJSONbyKey(data, "total_confirmed");
       countryDeathsArray = getArrayFromJSONbyKey(data, "total_deaths");
@@ -163,11 +164,14 @@ function getCountryDatabyDate() {
   });
 }
 
+// Function used to prevent show a [objectobject] string when de API
+// no have data.
+
 function checkValidData(recoveredData) {
   if (typeof recoveredData == "object" ){
-    return "No Data"
+    return "No Data";
   } else {
-    return  recoveredData
+    return  recoveredData;
   }
 }
 
@@ -205,14 +209,14 @@ function renderComparisonByCountriesChart() {
       document.getElementById("country2-deaths").innerHTML = "";
       document.getElementById("country2-recovered").innerHTML = "";
     },
-    // statusCode: {
-    //   404: function () {
-    //     alert("API not found");
-    //   },
-    //   400: function () {
-    //     alert("Invalid date");
-    //   },
-    // },
+    statusCode: {
+      404: function () {
+        console.warn("API not found");
+      },
+      400: function () {
+        console.warn("Invalid date");
+      },
+    },
     success: function (dataFirstCountry) {
       $.ajax({
         url:
@@ -225,13 +229,12 @@ function renderComparisonByCountriesChart() {
             "";
         },
         success: function (dataSecondCountry) {
-          // dataSecondCountry = data;
-          typeof dataFirstCountry == "string"
-            ? (dataFirstCountry = JSON.parse(dataFirstCountry))
-            : console.log("No need to convert into JSON");
-          typeof dataSecondCountry == "string"
-            ? (dataSecondCountry = JSON.parse(dataSecondCountry))
-            : console.log("No need to convert into JSON");
+          if (typeof dataFirstCountry == "string" && typeof dataSecondCountry == "string")
+            return
+          if (typeof dataFirstCountry == "string")
+            dataFirstCountry = JSON.parse(dataFirstCountry)
+          if (typeof dataSecondCountry == "string")
+            dataSecondCountry = JSON.parse(dataSecondCountry)
           countryDateArray = getArrayFromJSONbyKey(
             dataFirstCountry,
             "last_updated",
@@ -401,7 +404,7 @@ function numberWithCommas(x) {
 //Get the button
 var myButton = document.getElementById("scrollTopBtn");
 // When the user scrolls down 80px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {scrollFunction();};
 
 function scrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
