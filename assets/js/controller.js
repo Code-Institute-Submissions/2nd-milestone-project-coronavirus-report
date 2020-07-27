@@ -135,9 +135,9 @@ function getCountryDatabyDate() {
     },
     success: function (data) {
       if (data == "Invalid date format. Date format should be YYYY-MM-DD")
-        return
+        return;
       if (typeof data == "string")
-        data = JSON.parse(data)
+        data = JSON.parse(data);
       countryDateArray = getArrayFromJSONbyKey(data, "last_updated", true);
       countryCasesArray = getArrayFromJSONbyKey(data, "total_confirmed");
       countryDeathsArray = getArrayFromJSONbyKey(data, "total_deaths");
@@ -230,11 +230,11 @@ function renderComparisonByCountriesChart() {
         },
         success: function (dataSecondCountry) {
           if (typeof dataFirstCountry == "string" && typeof dataSecondCountry == "string")
-            return
+            return;
           if (typeof dataFirstCountry == "string")
-            dataFirstCountry = JSON.parse(dataFirstCountry)
+            dataFirstCountry = JSON.parse(dataFirstCountry);
           if (typeof dataSecondCountry == "string")
-            dataSecondCountry = JSON.parse(dataSecondCountry)
+            dataSecondCountry = JSON.parse(dataSecondCountry);
           countryDateArray = getArrayFromJSONbyKey(
             dataFirstCountry,
             "last_updated",
