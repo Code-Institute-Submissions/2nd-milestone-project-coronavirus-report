@@ -30,7 +30,7 @@ let secondCountryName;
 // Globally Report Datepicker ////////////////////////////////////////////////////////////////////////////////
 
 $(function () {
-  var dateFormat = "dd/mm/yy",
+  var dateFormat = "yy/mm/dd",
     from = $("#from")
       .datepicker({
         defaultDate: "+1w",
@@ -38,11 +38,11 @@ $(function () {
         numberOfMonths: 1,
       })
       .on("change", function () {
-        to.datepicker("option", "minDate", getDate(this));
+        to.datepicker("option", "minDate", $("#from").datepicker("getDate"));
         // Global variables defined
         filteredWorldData = filterJSONbyDate(
           total_world_report,
-          getDate(this),
+          $("#from").datepicker("getDate"),
           $("#to").datepicker("getDate")
         );
         dateArray = getArrayFromJSONbyKey(
@@ -80,12 +80,12 @@ $(function () {
         numberOfMonths: 1,
       })
       .on("change", function () {
-        from.datepicker("option", "maxDate", getDate(this));
+        from.datepicker("option", "maxDate", $("#to").datepicker("getDate"));
         // Global variables defined
         filteredWorldData = filterJSONbyDate(
           total_world_report,
           $("#from").datepicker("getDate"),
-          getDate(this)
+          $("#to").datepicker("getDate")
         );
         dateArray = getArrayFromJSONbyKey(
           filteredWorldData,
@@ -124,17 +124,6 @@ $(function () {
           optionRecovered(dateArray, totalRecoveredArray.reverse())
         );
       });
-
-  function getDate(element) {
-    var date;
-    try {
-      date = $.datepicker.parseDate(dateFormat, element.value);
-    } catch (error) {
-      date = null;
-    }
-
-    return date;
-  }
 });
 
 // Report by Country Datepicker ////////////////////////////////////////////////////////////////////////////////
